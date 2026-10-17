@@ -1,0 +1,1 @@
+{ "name": "cross-grokbot-relay", "private": true, "type": "module", "engines": { "node": ">=20" } }

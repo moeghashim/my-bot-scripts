@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Cross Relay Viewer</title>
+<link rel="stylesheet" href="/viewer/style.css">
+<script type="module" src="/viewer/app.js"></script>
+</head>
+<body>
+<header><h1>Cross Relay</h1><span id="status"></span><button id="logout" hidden>Log out</button></header>
+<section id="auth" hidden>
+  <p id="auth-msg"></p>
+  <button id="register" hidden>Register this device's passkey</button>
+  <button id="login" hidden>Sign in with passkey</button>
+</section>
+<section id="app" hidden>
+  <div class="keybar">
+    <label for="key">E2E key (stays in this tab, never sent):</label>
+    <input id="key" type="password" autocomplete="off" spellcheck="false" placeholder="paste base64url key">
+    <button id="unlock">Decrypt</button>
+    <button id="refresh">Refresh</button>
+  </div>
+  <div class="cols">
+    <nav><h2>Rooms</h2><ul id="rooms"></ul></nav>
+    <main><h2 id="room-title">Timeline</h2><ol id="timeline"></ol></main>
+  </div>
+  <details><summary>Audit log (latest 200, 30-day retention)</summary><table id="audit"><thead><tr><th>time</th><th>side</th><th>action</th><th>ok</th><th>detail</th><th>ip</th></tr></thead><tbody></tbody></table></details>
+</section>
+</body>
+</html>

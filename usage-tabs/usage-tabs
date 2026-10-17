@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# Open a new box Chrome window with the four /usage dashboards.
+# Do not reuse leftover tabs. Logins stay on this computer's Chrome profile.
+set -euo pipefail
+
+CURSOR_URL='https://cursor.com/dashboard/spending'
+CLAUDE_URL='https://claude.ai/settings/usage'
+CODEX_URL='https://chatgpt.com/codex/settings/usage'
+GROK_URL='https://grok.com/?_s=usage'
+
+if ! command -v box-chrome >/dev/null 2>&1; then
+  echo "usage-tabs: box-chrome not found" >&2
+  exit 1
+fi
+
+# New window, this agent's display/profile. Never a raw chrome binary.
+box-chrome --new-window \
+  "$CURSOR_URL" \
+  "$CLAUDE_URL" \
+  "$CODEX_URL" \
+  "$GROK_URL"
+
+printf '%s\n' \
+  "opened" \
+  "cursor $CURSOR_URL" \
+  "claude $CLAUDE_URL" \
+  "codex $CODEX_URL" \
+  "grok $GROK_URL"

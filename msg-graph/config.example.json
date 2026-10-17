@@ -1,0 +1,22 @@
+{
+  "_doc": "Copy to config.json (gitignored). Kind overrides for entries that aren't 1:1 bots. Keys are bot ids (preferred) or exact names. kind: bot | group | channel. Optional members: [names] renders stacked avatars. Read by index.html and by export_grokbot_messages.py (--config).",
+  "kinds": {
+    "00000000-0000-4000-8000-000000000001": {
+      "kind": "group",
+      "name": "Example group chat",
+      "members": [
+        "Bot A",
+        "Bot B"
+      ]
+    },
+    "00000000-0000-4000-8000-000000000002": {
+      "kind": "group",
+      "name": "Another group"
+    },
+    "imessage-relay": {
+      "kind": "channel",
+      "name": "iMessage relay",
+      "note": "iMessage relay channel, not a bot"
+    }
+  }
+}

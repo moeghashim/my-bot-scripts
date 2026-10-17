@@ -1,0 +1,22 @@
+{
+  "days": 7,
+  "messages": [
+    {
+      "id": "msg-atmos",
+      "threadId": "thr-atmos",
+      "subject": "Your Atmos Rewards Ascent Visa statement",
+      "from": "Bank of America <statements@bankofamerica.example>",
+      "date": "2026-10-01T12:00:00Z",
+      "snippet": "Your statement is ready. Minimum payment $40.00 is due October 15, 2026.",
+      "body": "Bank of America Atmos Rewards Ascent Visa ending in 0000. Statement balance $1,234.56. Minimum payment due $40.00. Payment due date October 15, 2026. Alaska Airlines miles will post after the statement closes. This is not a past-due notice."
+    },
+    {
+      "id": "msg-chase-later",
+      "threadId": "thr-chase-later",
+      "subject": "Your Chase statement is ready",
+      "from": "Chase <statements@chase.example>",
+      "date": "2026-10-02T12:00:00Z",
+      "snippet": "Minimum payment $25.00 due November 20, 2026 for the card ending in 4242."
+    }
+  ]
+}

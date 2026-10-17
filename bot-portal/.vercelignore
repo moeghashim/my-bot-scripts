@@ -1,0 +1,4 @@
+client
+tests
+*.md
+.env*

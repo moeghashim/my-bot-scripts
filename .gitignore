@@ -1,0 +1,43 @@
+# Secrets and env
+.env
+.env.*
+!.env.example
+*.secret
+*.key
+*.pem
+secrets/
+tunnel.token
+tunnel-credentials.json
+pull.url
+
+# Deploy links
+.vercel/
+
+# Local data (only fake samples are committed)
+**/data/*
+!**/data/sample-*.json
+progress_*.json
+candidates.json
+saved_candidates.json
+digest_pick.json
+bill_email_candidates.json
+bill_email_scan_result.json
+bill_due_watch.json
+seen.json
+last-inbound.json
+health-state.json
+msg-graph/config.json
+msg-graph/avatars/
+msg-graph/screenshot*.png
+
+# Media, logs, runtime
+videos/
+*.mp4
+*.log
+*.pid
+__pycache__/
+*.pyc
+.DS_Store
+.venv/
+venv/
+node_modules/

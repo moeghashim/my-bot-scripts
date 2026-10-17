@@ -1,0 +1,26 @@
+import assert from "node:assert";
+import crypto from "node:crypto";
+// Fake IDs for tests; real ones come from env in deployment.
+const MSG_DS = "11111111-1111-4111-8111-111111111111", THR_DS = "22222222-2222-4222-8222-222222222222";
+process.env.BOT_PORTAL_MESSAGES_DS = MSG_DS; process.env.BOT_PORTAL_THREADS_DS = THR_DS;
+delete process.env.BOT_PORTAL_MESSAGES_DB; delete process.env.BOT_PORTAL_THREADS_DB; delete process.env.WORK_BOTS;
+const { verifySignature, readMessage, isMessage, isThread, sideOf, splitBySide } = await import("../lib/notion.js");
+const { hostAllowed } = await import("../lib/relay.js");
+const tok = "secret_x", body = '{"a":1}';
+const sig = "sha256=" + crypto.createHmac("sha256", tok).update(body).digest("hex");
+assert(verifySignature(body, sig, tok));
+assert(!verifySignature(body + " ", sig, tok));
+assert(!verifySignature(body, sig, "other"));
+assert(!verifySignature(body, undefined, tok));
+const m = readMessage({ properties: { Sender: { select: { name: "Wubot" } }, Body: { rich_text: [{ plain_text: "hi" }] }, Thread: { relation: [{ id: "t1" }] }, "Message ID": { unique_id: { prefix: "MSG", number: 3 } } } });
+assert.equal(m.sender, "Wubot"); assert.equal(m.body, "hi"); assert.equal(m.msgId, "MSG-3"); assert.deepEqual(m.threadIds, ["t1"]);
+assert(isMessage({ parent: { data_source_id: MSG_DS } }));
+assert(isThread({ parent: { data_source_id: THR_DS } }));
+assert(!isMessage({ parent: { data_source_id: THR_DS } }));
+assert(!isMessage({ parent: {} }) && !isThread({ parent: {} }), "unset DB ids must never match");
+console.log("notion tests ok");
+assert.equal(sideOf("Work Bot"), "work"); assert.equal(sideOf("Work Portal"), "work"); assert.equal(sideOf("Wubot"), "personal"); assert.equal(sideOf("Portal"), "personal");
+assert.deepEqual(splitBySide(["Work Bot", "Portal", "Wubot"]), { personal: ["Portal", "Wubot"], work: ["Work Bot"] });
+assert.equal(sideOf("Portal (Work)"), "work"); assert.equal(sideOf("Portal (Personal)"), "personal");
+assert(hostAllowed("https://api2.cursor.sh/x")); assert(!hostAllowed("http://api2.cursor.sh/x")); assert(!hostAllowed("https://evil.example/x"));
+console.log("routing tests ok");

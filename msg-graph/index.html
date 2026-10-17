@@ -1,0 +1,909 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grok Bot Messages</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f7f8; --surface: #ffffff; --surface-2: #f2f2f4; --hover: #f0f0f3;
+    --border: #e4e4e8; --border-strong: #d3d3da;
+    --text: #18181b; --text-2: #52525b; --text-3: #8b8b94;
+    --accent: #5b5bd6; --accent-soft: rgba(91, 91, 214, .12);
+    --cell-empty: #ececf0; --focus: rgba(91, 91, 214, .45);
+    --shadow: 0 1px 2px rgba(16, 16, 24, .04), 0 1px 1px rgba(16, 16, 24, .03);
+    --tip-shadow: 0 10px 30px -8px rgba(16, 16, 24, .25), 0 2px 6px rgba(16, 16, 24, .08);
+    --acct-personal: #7c5cdb; --acct-work: #c2780a; --acct-other: #0f8a7e;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0b0b0e; --surface: #131317; --surface-2: #1a1a20; --hover: #1d1d24;
+      --border: #24242c; --border-strong: #33333d;
+      --text: #ededf0; --text-2: #a1a1aa; --text-3: #6c6c76;
+      --accent: #8b8bff; --accent-soft: rgba(139, 139, 255, .14);
+      --cell-empty: #1e1e25; --focus: rgba(139, 139, 255, .5);
+      --shadow: 0 0 0 1px rgba(255, 255, 255, .02);
+      --tip-shadow: 0 12px 32px -8px rgba(0, 0, 0, .7), 0 0 0 1px rgba(255, 255, 255, .06);
+      --acct-personal: #a48bff; --acct-work: #f0a43a; --acct-other: #36c2b4;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0b0b0e; --surface: #131317; --surface-2: #1a1a20; --hover: #1d1d24;
+    --border: #24242c; --border-strong: #33333d;
+    --text: #ededf0; --text-2: #a1a1aa; --text-3: #6c6c76;
+    --accent: #8b8bff; --accent-soft: rgba(139, 139, 255, .14);
+    --cell-empty: #1e1e25; --focus: rgba(139, 139, 255, .5);
+    --shadow: 0 0 0 1px rgba(255, 255, 255, .02);
+    --tip-shadow: 0 12px 32px -8px rgba(0, 0, 0, .7), 0 0 0 1px rgba(255, 255, 255, .06);
+    --acct-personal: #a48bff; --acct-work: #f0a43a; --acct-other: #36c2b4;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+    font: 14px/1.5 Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-feature-settings: "cv11", "ss01"; -webkit-font-smoothing: antialiased; }
+  button { font: inherit; color: inherit; }
+  :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 6px; }
+  .num { font-variant-numeric: tabular-nums; }
+  main { max-width: 1160px; margin: 0 auto; padding: 32px 16px 56px; }
+
+  /* header */
+  .head { display: flex; gap: 16px 24px; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; margin-bottom: 20px; }
+  .eyebrow { font-size: 12px; font-weight: 500; color: var(--text-3); letter-spacing: .02em; }
+  h1 { font-size: 24px; line-height: 1.2; letter-spacing: -.02em; font-weight: 650; margin: 2px 0 0; }
+  .controls { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+
+  /* segmented control */
+  .seg { display: inline-flex; padding: 2px; gap: 2px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 9px; }
+  .seg button { border: 0; background: transparent; padding: 4px 11px; border-radius: 7px; font-size: 13px; font-weight: 500;
+    color: var(--text-2); cursor: pointer; display: inline-flex; gap: 6px; align-items: center; transition: background .15s, color .15s; }
+  .seg button:hover:not(:disabled) { color: var(--text); }
+  .seg button[aria-pressed="true"] { background: var(--surface); color: var(--text); box-shadow: 0 1px 2px rgba(0,0,0,.08), 0 0 0 1px var(--border); }
+  .seg button:disabled { opacity: .4; cursor: not-allowed; }
+  .seg .count { font-size: 11px; color: var(--text-3); }
+  .seg .dot { width: 8px; height: 8px; border-radius: 4px; flex: none; }
+  .icon-btn { border: 1px solid var(--border); background: var(--surface); border-radius: 9px; height: 32px; padding: 0 11px; cursor: pointer;
+    display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: var(--text-2); transition: background .15s, color .15s, border-color .15s; }
+  .icon-btn:hover { color: var(--text); border-color: var(--border-strong); background: var(--hover); }
+  .icon-btn svg { width: 15px; height: 15px; }
+
+  /* cards */
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; box-shadow: var(--shadow); padding: 18px 20px; min-width: 0; }
+  .card-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
+  .card-title { font-size: 13px; font-weight: 600; letter-spacing: -.005em; }
+  .card-sub { font-size: 12px; color: var(--text-3); }
+  .stack { display: grid; gap: 16px; }
+
+  /* stats */
+  .stats { display: grid; grid-template-columns: 1.35fr repeat(4, 1fr); }
+  .stat { padding: 2px 20px; border-left: 1px solid var(--border); min-width: 0; }
+  .stat:first-child { border-left: 0; padding-left: 0; }
+  .stat .label { font-size: 12px; color: var(--text-3); font-weight: 500; }
+  .stat .value { font-size: 22px; font-weight: 600; letter-spacing: -.02em; line-height: 1.25; margin-top: 4px; white-space: nowrap; }
+  .stat.hero .value { font-size: 36px; letter-spacing: -.035em; line-height: 1.1; }
+  .stat .unit { font-size: 13px; font-weight: 500; color: var(--text-3); margin-left: 4px; letter-spacing: 0; }
+  .stat .sub { font-size: 12px; color: var(--text-2); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  @media (max-width: 860px) {
+    .stats { grid-template-columns: repeat(2, 1fr); gap: 16px 0; }
+    .stat.hero { grid-column: 1 / -1; padding: 0 0 14px; border-left: 0; border-bottom: 1px solid var(--border); }
+    .stat:nth-child(2n) { border-left: 0; padding-left: 0; }
+  }
+
+  /* layout rows */
+  .row-a { display: grid; grid-template-columns: minmax(0, max-content) minmax(300px, 1fr); gap: 16px; } /* heatmap hugs its cells */
+  .row-b { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr); gap: 16px; align-items: stretch; }
+  @media (max-width: 900px) { .row-a, .row-b { grid-template-columns: minmax(0, 1fr); } }
+
+  /* heatmap */
+  .heat-scroll { overflow-x: auto; overflow-y: hidden; padding-bottom: 2px; }
+  .heat rect.cell { transition: fill .25s ease; }
+  .heat rect.cell:hover { stroke: var(--text); stroke-width: 1.5px; }
+  .legend-ramp { display: inline-flex; gap: 3px; align-items: center; font-size: 11px; color: var(--text-3); }
+  .legend-ramp i { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+  svg text { fill: var(--text-3); font-size: 10.5px; font-family: inherit; }
+
+  /* bars */
+  .bars .col-hit { fill: transparent; transition: fill .12s; }
+  .bars .col:hover .col-hit { fill: var(--hover); }
+  .bars .seg-rect { transition: opacity .2s ease; }
+  .legend { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 12px; font-size: 12px; color: var(--text-2); }
+  .legend button { display: inline-flex; gap: 6px; align-items: center; border: 0; background: none; padding: 2px 0; color: inherit; transition: opacity .2s, color .15s; }
+  .legend button:hover:not(:disabled) { color: var(--text); }
+
+  /* bot list */
+  .list-card { display: flex; flex-direction: column; }
+  .list-wrap { flex: 1 1 auto; min-height: 280px; overflow-y: auto; contain: size; margin: 0 -10px -8px; padding: 0 4px 4px; }
+  @media (max-width: 900px) { .list-wrap { contain: none; max-height: 520px; } }
+  .bots { list-style: none; margin: 0; padding: 0; }
+  .bot-row { width: 100%; display: grid; grid-template-columns: 18px 24px minmax(0, 1fr) auto; gap: 10px; align-items: center; border: 0;
+    background: transparent; border-radius: 9px; padding: 7px 8px; text-align: left; cursor: pointer; transition: background .15s, opacity .2s; }
+  .bot-row:hover { background: var(--hover); }
+  .bot-row[aria-pressed="true"] { background: var(--accent-soft); }
+  .bots.has-sel .bot-row[aria-pressed="false"] { opacity: .55; }
+  .bots.has-sel .bot-row[aria-pressed="false"]:hover { opacity: 1; }
+  .bot-row .rank { font-size: 11px; color: var(--text-3); text-align: right; }
+  .bot-row .name { display: flex; align-items: center; gap: 6px; min-width: 0; font-size: 13px; font-weight: 500; }
+  .bot-row .name .txt { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .bot-row .track { height: 3px; border-radius: 2px; background: var(--surface-2); margin-top: 5px; overflow: hidden; }
+  .bot-row .fill { height: 100%; border-radius: 2px; transform-origin: left; }
+  .bot-row .nums { text-align: right; font-size: 13px; font-weight: 500; white-space: nowrap; }
+  .bot-row .pct { display: block; font-size: 11px; color: var(--text-3); font-weight: 400; }
+
+  /* badges */
+  .badge { display: inline-flex; align-items: center; gap: 3px; height: 17px; padding: 0 6px; border-radius: 5px; font-size: 10.5px; font-weight: 600;
+    letter-spacing: .01em; color: var(--text-2); background: var(--surface-2); border: 1px solid var(--border); flex: none; }
+  .badge svg { width: 10px; height: 10px; }
+  .acct { display: inline-flex; align-items: center; justify-content: center; min-width: 17px; height: 17px; padding: 0 4px; border-radius: 5px; font-size: 10px;
+    font-weight: 700; flex: none; color: var(--c); background: color-mix(in oklab, var(--c) 14%, transparent); }
+
+  /* avatars */
+  .av { position: relative; flex: none; display: inline-grid; place-items: center; border-radius: 50%; }
+  .av img, .av .ini { width: 100%; height: 100%; border-radius: inherit; object-fit: cover; display: grid; place-items: center; }
+  .av .ini { color: #fff; font-weight: 650; letter-spacing: -.02em; line-height: 1; }
+  .av.tile { border-radius: 30%; }
+  .av.ring::after { content: ""; position: absolute; inset: -2px; border-radius: 50%; box-shadow: 0 0 0 1.5px var(--ring); pointer-events: none; }
+  .av.tile.ring::after { border-radius: 36%; }
+  .av .corner { position: absolute; right: -3px; bottom: -3px; width: 11px; height: 11px; border-radius: 50%; background: var(--surface);
+    display: grid; place-items: center; color: var(--text-2); box-shadow: 0 0 0 1px var(--border); }
+  .av .corner svg { width: 7px; height: 7px; }
+  .av-stack { display: inline-flex; flex: none; }
+  .av-stack .av + .av { margin-left: -40%; }
+  .av-stack .av { box-shadow: 0 0 0 1.5px var(--surface); }
+
+  /* tooltip */
+  .tip { position: fixed; z-index: 30; pointer-events: none; width: 260px; background: var(--surface); color: var(--text); border-radius: 12px;
+    box-shadow: var(--tip-shadow); border: 1px solid var(--border); padding: 12px; font-size: 12px; animation: tipIn .12s ease-out; }
+  @keyframes tipIn { from { opacity: 0; transform: translateY(2px) scale(.98); } }
+  .tip .t-date { font-weight: 600; font-size: 12.5px; }
+  .tip .t-total { color: var(--text-2); margin-top: 1px; }
+  .tip .t-rows { margin-top: 10px; display: grid; gap: 6px; }
+  .tip .t-row { display: grid; grid-template-columns: 16px minmax(0, 1fr) auto; gap: 8px; align-items: center; }
+  .tip .t-row.dim { opacity: .45; }
+  .tip .t-name { display: flex; gap: 5px; align-items: center; min-width: 0; }
+  .tip .t-name .txt { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .tip .t-n { font-weight: 600; text-align: right; }
+  .tip .t-more { color: var(--text-3); padding-left: 24px; }
+
+  /* weekday */
+  .wk-row { display: grid; grid-template-columns: 30px minmax(0, 1fr) 40px; gap: 10px; align-items: center; font-size: 12px; padding: 3px 0; }
+  .wk-row .lbl { color: var(--text-3); }
+  .wk-row .track { height: 8px; border-radius: 4px; background: var(--surface-2); overflow: hidden; }
+  .wk-row .fill { display: block; height: 100%; border-radius: 4px; transform-origin: left; transition: width .35s ease, background .25s; }
+  .wk-row .v { text-align: right; color: var(--text-2); }
+
+  /* misc */
+  .chip { display: inline-flex; gap: 6px; align-items: center; height: 26px; padding: 0 6px 0 4px; border-radius: 999px; border: 1px solid var(--border);
+    background: var(--surface); font-size: 12px; font-weight: 500; cursor: pointer; color: var(--text); transition: border-color .15s; }
+  .chip:hover { border-color: var(--border-strong); }
+  .chip .x { color: var(--text-3); font-size: 14px; line-height: 1; padding: 0 2px; }
+  .toggle { display: inline-flex; gap: 6px; align-items: center; font-size: 12px; color: var(--text-2); cursor: pointer; user-select: none; }
+  .toggle input { accent-color: var(--accent); margin: 0; }
+  .foot { margin-top: 20px; font-size: 12px; color: var(--text-3); display: grid; gap: 4px; }
+  .foot > div { display: flex; gap: 6px; align-items: flex-start; }
+  .err { color: #d6336c; font-size: 12px; margin: -8px 0 16px; }
+  .empty-state { text-align: center; padding: 56px 16px; }
+  .empty-state h2 { font-size: 16px; margin: 0 0 6px; }
+  .empty-state p { color: var(--text-2); margin: 0 0 18px; }
+  .muted-note { color: var(--text-3); font-size: 12px; padding: 24px 0; text-align: center; }
+  .drop { position: fixed; inset: 12px; z-index: 40; border-radius: 18px; border: 2px dashed var(--accent);
+    background: color-mix(in oklab, var(--bg) 82%, var(--accent)); display: grid; place-items: center; font-size: 16px; font-weight: 600; color: var(--accent); }
+
+  /* entrance (driven by stage, see ANIMATION STORYBOARD) */
+  .enter { opacity: 0; transform: translateY(var(--rise, 6px)); }
+  .enter.in { opacity: 1; transform: none; transition: opacity var(--dur) ease-out, transform var(--dur) var(--spring); transition-delay: var(--delay, 0ms); }
+  .grow { transform: scaleY(0); transform-box: fill-box; transform-origin: bottom; }
+  .grow.in { transform: none; transition: transform var(--dur) var(--spring); transition-delay: var(--delay, 0ms); }
+  .grow-x { transform: scaleX(0); }
+  .grow-x.in { transform: none; transition: transform var(--dur) var(--spring); transition-delay: var(--delay, 0ms); }
+  @media (prefers-reduced-motion: reduce) {
+    .enter, .grow, .grow-x { opacity: 1 !important; transform: none !important; transition: none !important; }
+    .tip { animation: none; }
+  }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js" integrity="sha384-DGyLxAyjq0f9SPpVevD6IgztCFlnMF6oW/XQGmfe+IsZ8TqEiDrcHkMLKI6fiB/Z" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js" integrity="sha384-gTGxhz21lVGYNMcdJOyq01Edg0jhn/c22nsx0kyqP0TxaV5WVdsSH1fSDUf5YJj1" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/htm@3.1.1/dist/htm.umd.js" integrity="sha384-toVdrLSMaw7Y55MowcKqkmFL/Ek6Sky62NOk0b5sDDZBu2wcoPyyQUt9unDVjXhL" crossorigin="anonymous"></script>
+<script>
+const { useState, useEffect, useMemo, useRef, useCallback, useLayoutEffect } = React;
+const html = htm.bind(React.createElement);
+
+/* ─────────────────────────────────────────────────────────
+ * ANIMATION STORYBOARD
+ *
+ * Plays on first load and again on each account switch.
+ *
+ *    0ms   stat strip fades in, rises 6px → 0 (staggered 40ms)
+ *  120ms   heatmap + weekday cards fade in
+ *  200ms   weekday bars grow from the left (staggered 30ms)
+ *  260ms   weekly bars grow from baseline (staggered 18ms/week, capped 400ms)
+ *  320ms   bot rows fade in, share bars grow (staggered 16ms, capped 300ms)
+ * ───────────────────────────────────────────────────────── */
+const TIMING = {
+  stats:     0,     // stat strip rises in
+  heatmap:   120,   // heatmap + weekday cards appear
+  weekday:   200,   // weekday bars grow
+  bars:      260,   // weekly stacked bars grow
+  botRows:   320,   // ranked list fades in
+};
+const STATS   = { stagger: 40 };                          // ms between stat tiles
+const WEEKDAY = { stagger: 30 };                          // ms between weekday bars
+const BARS    = { stagger: 18, maxStagger: 400 };         // ms per week, capped total
+const ROWS    = { stagger: 16, maxStagger: 300 };         // ms per bot row, capped total
+const SPRING  = { stiffness: 300, damping: 30, mass: 1 }; // smooth settle (cards / bars)
+
+/* Sample a damped spring into a CSS linear() easing, so CSS transitions move on spring physics. */
+function springEasing({ stiffness, damping, mass }) {
+  const w0 = Math.sqrt(stiffness / mass), zeta = damping / (2 * Math.sqrt(stiffness * mass));
+  const duration = Math.min(1.2, -Math.log(0.002) / (zeta * w0));
+  const wd = w0 * Math.sqrt(Math.max(1e-6, 1 - zeta * zeta));
+  const pts = [];
+  for (let i = 0; i <= 32; i++) {
+    const t = (i / 32) * duration;
+    const x = zeta < 1
+      ? 1 - Math.exp(-zeta * w0 * t) * (Math.cos(wd * t) + (zeta * w0 / wd) * Math.sin(wd * t))
+      : 1 - Math.exp(-w0 * t) * (1 + w0 * t);
+    pts.push(+x.toFixed(4));
+  }
+  pts[pts.length - 1] = 1;
+  return { easing: `linear(${pts.join(", ")})`, ms: Math.round(duration * 1000) };
+}
+(() => {
+  const s = springEasing(SPRING);
+  document.documentElement.style.setProperty("--spring", s.easing);
+  document.documentElement.style.setProperty("--dur", `${s.ms}ms`);
+})();
+
+// ---------- constants ----------
+const DAY = 86400000;
+const KNOWN_ACCOUNTS = ["personal", "work"];
+const KINDS = ["bot", "group", "channel"];
+const PALETTE = ["#5b8def", "#3fb27f", "#e0a33b", "#e0607e", "#9d7bf0", "#ef8a4a", "#2fb5c4"]; // top series; the rest is Other
+const OTHER = { key: "__other__", name: "Other", color: "#9a9aa6" };
+const INITIAL_HUES = [250, 160, 30, 340, 200, 280, 10, 120, 300, 55];
+const HEAT = { minCell: 10, maxCell: 22, gap: 3, top: 20, left: 30, levels: [0, 32, 56, 78, 100] }; // levels: % of ramp color
+const TIP = { offset: 14, maxRows: 10 };
+const WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+// ---------- helpers ----------
+const parseDate = s => { const [y, m, d] = s.split("-").map(Number); return Date.UTC(y, m - 1, d); };
+const iso = t => new Date(t).toISOString().slice(0, 10);
+const fmtDate = (t, o = {}) => new Date(t).toLocaleDateString(undefined, { timeZone: "UTC", month: "short", day: "numeric", ...o });
+const weekStart = t => t - new Date(t).getUTCDay() * DAY;
+const nf = new Intl.NumberFormat();
+const fmt = n => nf.format(Math.round(n));
+const fmt1 = n => n.toLocaleString(undefined, { maximumFractionDigits: 1, minimumFractionDigits: n < 10 ? 1 : 0 });
+const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
+const slugify = s => String(s).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+const hash = s => { let h = 0; for (const c of String(s)) h = (h * 31 + c.charCodeAt(0)) | 0; return Math.abs(h); };
+const acctColor = a => a === "personal" ? "var(--acct-personal)" : a === "work" ? "var(--acct-work)" : "var(--acct-other)";
+const storage = {
+  get(k) { try { return localStorage.getItem(k); } catch { return null; } },
+  set(k, v) { try { v == null ? localStorage.removeItem(k) : localStorage.setItem(k, v); } catch {} },
+};
+function niceMax(v) {
+  if (v <= 0) return 1;
+  const p = Math.pow(10, Math.floor(Math.log10(v))), f = v / p;
+  return (f <= 1 ? 1 : f <= 2 ? 2 : f <= 2.5 ? 2.5 : f <= 5 ? 5 : 10) * p;
+}
+
+// ---------- avatars ----------
+// Resolves avatars/<slug>.png|.jpg. Uses the http.server directory listing when available
+// (no 404 noise); otherwise probes each extension with an Image.
+const AVATAR_EXTS = ["png", "jpg", "jpeg", "webp"];
+const avatarState = { listing: undefined, cache: new Map(), subs: new Set() };
+const avatarListing = (async () => {
+  try {
+    const r = await fetch("./avatars/", { cache: "no-store" });
+    if (!r.ok) throw 0;
+    const files = [...(await r.text()).matchAll(/href="([^"?#/]+\.(?:png|jpe?g|webp))"/gi)].map(m => decodeURIComponent(m[1]));
+    const map = new Map();
+    for (const f of files) { const slug = f.replace(/\.[^.]+$/, "").toLowerCase(); if (!map.has(slug) || f.endsWith(".png")) map.set(slug, `./avatars/${f}`); }
+    avatarState.listing = map;
+  } catch { avatarState.listing = null; }
+})();
+const probe = src => new Promise(res => { const i = new Image(); i.onload = () => res(true); i.onerror = () => res(false); i.src = src; });
+function resolveAvatar(slug) {
+  if (avatarState.cache.has(slug)) return;
+  avatarState.cache.set(slug, undefined);
+  (async () => {
+    await avatarListing;
+    let url = null;
+    if (avatarState.listing) url = avatarState.listing.get(slug) || null;
+    else for (const ext of AVATAR_EXTS) if (await probe(`./avatars/${slug}.${ext}`)) { url = `./avatars/${slug}.${ext}`; break; }
+    avatarState.cache.set(slug, url);
+    avatarState.subs.forEach(f => f());
+  })();
+}
+function useAvatar(name) {
+  const slug = slugify(name);
+  const [, tick] = useState(0);
+  useEffect(() => {
+    const f = () => tick(x => x + 1);
+    avatarState.subs.add(f); resolveAvatar(slug);
+    return () => avatarState.subs.delete(f);
+  }, [slug]);
+  return avatarState.cache.get(slug) || null;
+}
+
+const ICONS = {
+  group: html`<svg viewBox="0 0 16 16" fill="currentColor"><circle cx="5.5" cy="5" r="2.5"/><circle cx="11" cy="5.5" r="2"/><path d="M1 13c0-2.5 2-4.2 4.5-4.2S10 10.5 10 13v.5H1z"/><path d="M10.6 8.6c2.3 0 4.4 1.4 4.4 3.9v1H11.4V13c0-1.7-.3-3-.8-4.4z"/></svg>`,
+  channel: html`<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 2 4.5 14M11.5 2 10 14M2.5 5.5h11.5M2 10.5h11.5"/></svg>`,
+  sun: html`<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="8" cy="8" r="3"/><path d="M8 1.5v1.5M8 13v1.5M1.5 8H3M13 8h1.5M3.4 3.4l1 1M11.6 11.6l1 1M3.4 12.6l1-1M11.6 4.4l1-1"/></svg>`,
+  moon: html`<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M13.5 9.5A5.5 5.5 0 0 1 6.5 2.5a5.5 5.5 0 1 0 7 7z"/></svg>`,
+  upload: html`<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 10.5V2.5M5 5.5l3-3 3 3M2.5 10.5v2a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-2"/></svg>`,
+};
+
+// Bots: round photo, or a colored initial. Groups/channels: rounded tile with a glyph (or the
+// photo plus a corner glyph); with config `members`, a stack of member avatars instead.
+function Avatar({ bot, size = 24, ring }) {
+  const url = useAvatar(bot.name);
+  const members = bot.kind !== "bot" && Array.isArray(bot.members) && bot.members.length ? bot.members.slice(0, 3) : null;
+  if (members) {
+    return html`<span class="av-stack" title=${`${bot.name} · ${members.join(", ")}`}>
+      ${members.map(m => html`<${Avatar} key=${m} bot=${{ name: m, kind: "bot" }} size=${Math.round(size * 0.8)} />`)}
+    </span>`;
+  }
+  const hue = INITIAL_HUES[hash(bot.name) % INITIAL_HUES.length];
+  const isTile = bot.kind !== "bot";
+  const fill = `oklch(0.62 0.13 ${hue})`;
+  let inner;
+  if (url) inner = html`<img src=${url} alt="" decoding="async" />`;
+  else if (isTile) inner = html`<span class="ini" style=${{ background: `color-mix(in oklab, ${fill} 22%, var(--surface-2))`, color: fill }}>
+      <span style=${{ width: size * 0.58, height: size * 0.58, display: "grid" }}>${ICONS[bot.kind] || ICONS.group}</span></span>`;
+  else inner = html`<span class="ini" style=${{ background: fill, fontSize: size * 0.46 }}>${(bot.name.match(/[a-z0-9]/i) || ["?"])[0].toUpperCase()}</span>`;
+  return html`<span class=${`av${isTile ? " tile" : ""}${ring ? " ring" : ""}`} style=${{ width: size, height: size, "--ring": ring || "transparent" }} aria-hidden="true">
+    ${inner}
+    ${url && isTile && html`<span class="corner">${ICONS[bot.kind] || ICONS.group}</span>`}
+  </span>`;
+}
+
+function KindBadge({ kind }) {
+  if (!kind || kind === "bot") return null;
+  return html`<span class="badge" title=${kind === "group" ? "Group chat" : "Channel"}>${ICONS[kind]}${kind === "group" ? "Group" : "Channel"}</span>`;
+}
+function AcctBadges({ accounts, show }) {
+  if (!show) return null;
+  return Object.keys(accounts).sort().map(a => html`<span key=${a} class="acct" style=${{ "--c": acctColor(a) }}
+    title=${`${cap(a)}: ${fmt(accounts[a])}`}>${a.charAt(0).toUpperCase()}</span>`);
+}
+
+// ---------- data model ----------
+function normalize(json, source) {
+  if (!json || typeof json !== "object" || !Array.isArray(json.days)) throw new Error("expected {account, days: [...]}");
+  const bots = new Map(); // name -> {id, name, kind, members}
+  for (const [id, b] of Object.entries(json.bots || {})) {
+    if (!b || !b.name) continue;
+    bots.set(b.name, { id, name: b.name, kind: KINDS.includes(b.kind) ? b.kind : null, members: Array.isArray(b.members) ? b.members : null });
+  }
+  const days = new Map();
+  for (const d of json.days) {
+    if (!d || !/^\d{4}-\d{2}-\d{2}$/.test(d.date)) continue;
+    const byBot = {};
+    for (const [name, v] of Object.entries(d.byBot || {})) {
+      const n = Number(v) || 0; if (n <= 0) continue;
+      byBot[name] = n;
+      if (!bots.has(name)) bots.set(name, { id: null, name, kind: null, members: null });
+    }
+    days.set(d.date, byBot);
+  }
+  return { account: String(json.account || "unknown").toLowerCase(), sources: [source],
+    generatedAt: json.generatedAt || null, timezone: json.timezone || null, bots, days };
+}
+
+function mergeAccount(prev, next) {
+  if (!prev) return next;
+  const days = new Map(prev.days); for (const [k, v] of next.days) days.set(k, v); // later file wins per date
+  const bots = new Map(prev.bots); for (const [k, v] of next.bots) bots.set(k, { ...bots.get(k), ...v, kind: v.kind || bots.get(k)?.kind || null });
+  return { ...prev, days, bots, sources: [...new Set([...prev.sources, ...next.sources])],
+    generatedAt: next.generatedAt || prev.generatedAt, timezone: next.timezone || prev.timezone };
+}
+
+// Kind precedence: config override (by id, then exact name) > kind in the JSON > "bot".
+function resolveKind(b, config) {
+  const o = (b.id && config.kinds[b.id]) || config.kinds[b.name];
+  return { kind: (o && KINDS.includes(o.kind) ? o.kind : null) || b.kind || "bot", members: (o && o.members) || b.members || null };
+}
+
+// Combine accounts into one keyed model. Same-name bots merge across accounts unless merge=false.
+function combine(accounts, config, merge) {
+  const multi = accounts.length > 1;
+  const keyOf = (name, acct) => (multi && !merge ? `${name}\u0001${acct}` : name);
+  const bots = new Map(); // key -> {key, name, kind, members, accounts: {acct: total}}
+  const days = new Map(); // date -> {key: {n, by: {acct: n}}}
+  for (const a of accounts) {
+    for (const b of a.bots.values()) {
+      const key = keyOf(b.name, a.account);
+      const { kind, members } = resolveKind(b, config);
+      const cur = bots.get(key);
+      if (!cur) bots.set(key, { key, name: b.name, kind, members, accounts: { [a.account]: 0 } });
+      else {
+        cur.accounts[a.account] = cur.accounts[a.account] || 0;
+        if (cur.kind === "bot" && kind !== "bot") cur.kind = kind; // any account calling it a group/channel wins
+        cur.members = cur.members || members;
+      }
+    }
+    for (const [date, byBot] of a.days) {
+      const day = days.get(date) || {};
+      for (const [name, n] of Object.entries(byBot)) {
+        const key = keyOf(name, a.account);
+        const e = day[key] || (day[key] = { n: 0, by: {} });
+        e.n += n; e.by[a.account] = (e.by[a.account] || 0) + n;
+        bots.get(key).accounts[a.account] += n;
+      }
+      days.set(date, day);
+    }
+  }
+  return { bots, days, multi };
+}
+
+const kindMatches = (kind, filter) => filter === "all" || (filter === "bots" ? kind === "bot" : kind !== "bot");
+
+function buildView(model, kindFilter, selected) {
+  const keys = [...model.days.keys()].sort();
+  if (!keys.length) return null;
+  const allowed = new Set([...model.bots.values()].filter(b => kindMatches(b.kind, kindFilter)).map(b => b.key));
+  const start = parseDate(keys[0]), end = parseDate(keys[keys.length - 1]);
+  const series = [];
+  const totals = new Map([...allowed].map(k => [k, 0]));
+  for (let t = start; t <= end; t += DAY) {
+    const raw = model.days.get(iso(t)) || {};
+    const entries = Object.entries(raw).filter(([k]) => allowed.has(k)).map(([k, e]) => ({ key: k, n: e.n, by: e.by }))
+      .sort((a, b) => b.n - a.n);
+    const all = entries.reduce((s, e) => s + e.n, 0);
+    entries.forEach(e => totals.set(e.key, totals.get(e.key) + e.n));
+    series.push({ t, entries, all, value: selected ? (raw[selected] && allowed.has(selected) ? raw[selected].n : 0) : all });
+  }
+  const ranked = [...totals].map(([key, total]) => ({ ...model.bots.get(key), total }))
+    .sort((a, b) => b.total - a.total || a.name.localeCompare(b.name));
+  return { series, start, end, ranked };
+}
+
+function computeStats(series) {
+  const total = series.reduce((s, d) => s + d.value, 0), n = series.length;
+  let busiest = series[0];
+  for (const d of series) if (d.value > busiest.value) busiest = d;
+  // Current streak ends on the last day; if that day is 0 (likely an incomplete today), start from the day before.
+  let i = n - 1, streak = 0;
+  if (i >= 0 && series[i].value === 0) i--;
+  while (i >= 0 && series[i].value > 0) { streak++; i--; }
+  let longest = 0, run = 0;
+  for (const d of series) { run = d.value > 0 ? run + 1 : 0; longest = Math.max(longest, run); }
+  return { total, n, perDay: total / n, perWeek: total / (n / 7), busiest, streak, longest, active: series.filter(d => d.value > 0).length };
+}
+
+// ---------- hooks ----------
+function useWidth(ref, initial = 600) {
+  const [w, setW] = useState(initial);
+  useLayoutEffect(() => {
+    if (!ref.current) return;
+    setW(ref.current.clientWidth);
+    const ro = new ResizeObserver(([e]) => setW(e.contentRect.width));
+    ro.observe(ref.current);
+    return () => ro.disconnect();
+  }, []);
+  return w;
+}
+
+// ---------- tooltip ----------
+function Tooltip({ tip }) {
+  const ref = useRef(null);
+  const [pos, setPos] = useState(null);
+  useLayoutEffect(() => {
+    if (!tip || !ref.current) return;
+    const r = ref.current.getBoundingClientRect();
+    let x = tip.x + TIP.offset, y = tip.y + TIP.offset;
+    if (x + r.width > window.innerWidth - 8) x = tip.x - r.width - TIP.offset;   // flip left near the right edge
+    if (y + r.height > window.innerHeight - 8) y = tip.y - r.height - TIP.offset; // flip up near the bottom
+    setPos({ left: Math.max(8, x), top: Math.max(8, y) });
+  }, [tip]);
+  if (!tip) return null;
+  return html`<div class="tip" ref=${ref} role="tooltip" style=${pos || { left: -9999, top: -9999 }}>${tip.content}</div>`;
+}
+
+function Breakdown({ title, total, entries, bots, selected, showAccts }) {
+  const sel = selected && entries.find(e => e.key === selected);
+  return html`<div>
+    <div class="t-date">${title}</div>
+    <div class="t-total num">${fmt(total)} message${total === 1 ? "" : "s"}${selected ? ` · ${fmt(sel ? sel.n : 0)} to ${bots.get(selected).name}` : ""}</div>
+    ${entries.length > 0 && html`<div class="t-rows">
+      ${entries.slice(0, TIP.maxRows).map(e => {
+        const b = bots.get(e.key);
+        return html`<div key=${e.key} class=${`t-row${selected && e.key !== selected ? " dim" : ""}`}>
+          <${Avatar} bot=${b} size=${16} />
+          <span class="t-name"><span class="txt">${b.name}</span><${AcctBadges} accounts=${e.by} show=${showAccts} /></span>
+          <span class="t-n num">${fmt(e.n)}</span>
+        </div>`;
+      })}
+      ${entries.length > TIP.maxRows && (rest => html`<div class="t-more">+${entries.length - TIP.maxRows} more · ${fmt(rest)} msg${rest === 1 ? "" : "s"}</div>`)(entries.slice(TIP.maxRows).reduce((s, e) => s + e.n, 0))}
+    </div>`}
+  </div>`;
+}
+
+// ---------- heatmap ----------
+function Heatmap({ view, model, selected, colors, setTip, showAccts }) {
+  const wrapRef = useRef(null);
+  const width = useWidth(wrapRef);
+  const { series, start, end } = view;
+  const first = weekStart(start);
+  const weeks = Math.floor((weekStart(end) - first) / (7 * DAY)) + 1;
+  const cell = Math.max(HEAT.minCell, Math.min(HEAT.maxCell, Math.floor((width - HEAT.left) / weeks) - HEAT.gap));
+  const step = cell + HEAT.gap;
+  const nz = series.map(d => d.value).filter(v => v > 0).sort((a, b) => a - b);
+  const q = p => nz.length ? nz[Math.min(nz.length - 1, Math.floor(p * nz.length))] : 0;
+  const th = [q(0.25), q(0.5), q(0.75)];
+  const level = v => v <= 0 ? 0 : v <= th[0] ? 1 : v <= th[1] ? 2 : v <= th[2] ? 3 : 4;
+  const ramp = (selected && colors.get(selected)) || "var(--accent)";
+  const fillFor = l => l === 0 ? "var(--cell-empty)" : `color-mix(in oklab, ${ramp} ${HEAT.levels[l]}%, var(--cell-empty))`;
+  const months = [];
+  for (let w = 0, last = -1, lastW = -9; w < weeks; w++) {
+    const t = Math.max(first + w * 7 * DAY, start), m = new Date(t).getUTCMonth();
+    if (m !== last && w - lastW >= 3) { months.push({ w, label: fmtDate(t, { month: "short", day: undefined }) }); lastW = w; }
+    last = m;
+  }
+  const svgW = HEAT.left + weeks * step, svgH = HEAT.top + 7 * step;
+  return html`<div ref=${wrapRef}>
+    <div class="heat-scroll">
+      <svg class="heat" width=${svgW} height=${svgH} role="img" aria-label="Daily message heatmap">
+        ${months.map(m => html`<text key=${"m" + m.w} x=${HEAT.left + m.w * step} y=${12}>${m.label}</text>`)}
+        ${[[1, "Mon"], [3, "Wed"], [5, "Fri"]].map(([r, l]) => html`<text key=${l} x=${0} y=${HEAT.top + r * step + cell * 0.72}>${l}</text>`)}
+        ${series.map(d => {
+          const w = Math.floor((d.t - first) / (7 * DAY)), r = new Date(d.t).getUTCDay();
+          return html`<rect key=${d.t} class="cell" data-date=${iso(d.t)} x=${HEAT.left + w * step} y=${HEAT.top + r * step} width=${cell} height=${cell}
+            rx=${Math.max(2, cell * 0.22)} fill=${fillFor(level(d.value))}
+            onMouseMove=${e => setTip({ x: e.clientX, y: e.clientY, content: html`<${Breakdown} title=${fmtDate(d.t, { weekday: "long", year: "numeric" })}
+              total=${d.all} entries=${d.entries} bots=${model.bots} selected=${selected} showAccts=${showAccts} />` })}
+            onMouseLeave=${() => setTip(null)} />`;
+        })}
+      </svg>
+    </div>
+    <div style=${{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 12, gap: 12, flexWrap: "wrap" }}>
+      <span class="card-sub">${fmtDate(start, { year: "numeric" })} – ${fmtDate(end, { year: "numeric" })} · ${fmt(series.length)} days</span>
+      <span class="legend-ramp" title=${`Quartiles of active days: ≤${th[0]}, ≤${th[1]}, ≤${th[2]}, more`}>Less ${[0, 1, 2, 3, 4].map(l => html`<i key=${l} style=${{ background: fillFor(l) }}></i>`)} More</span>
+    </div>
+  </div>`;
+}
+
+// ---------- weekday rhythm ----------
+function Weekday({ view, selected, colors, stage }) {
+  const sums = Array(7).fill(0), counts = Array(7).fill(0);
+  for (const d of view.series) { const w = new Date(d.t).getUTCDay(); sums[w] += d.value; counts[w]++; }
+  const avgs = sums.map((s, i) => counts[i] ? s / counts[i] : 0);
+  const max = Math.max(1, ...avgs);
+  const peak = avgs.indexOf(Math.max(...avgs));
+  const color = (selected && colors.get(selected)) || "var(--accent)";
+  return html`<div>
+    ${[1, 2, 3, 4, 5, 6, 0].map((w, i) => html`<div class="wk-row" key=${w}>
+      <span class="lbl">${WEEKDAYS[w]}</span>
+      <span class="track"><span class=${`fill grow-x${stage >= 3 ? " in" : ""}`} style=${{ width: `${(avgs[w] / max) * 100}%`,
+        background: w === peak ? color : `color-mix(in oklab, ${color} 45%, var(--surface-2))`, "--delay": `${i * WEEKDAY.stagger}ms` }}></span></span>
+      <span class="v num">${fmt1(avgs[w])}</span>
+    </div>`)}
+    <div class="card-sub" style=${{ marginTop: 10 }}>Average per day · busiest on ${WEEKDAYS[peak]}s</div>
+  </div>`;
+}
+
+// ---------- weekly stacked bars ----------
+function WeeklyBars({ view, model, colors, selected, onSelect, setTip, stage, showAccts }) {
+  const ref = useRef(null);
+  const width = useWidth(ref);
+  const weeks = useMemo(() => {
+    const m = new Map();
+    for (const d of view.series) {
+      const ws = weekStart(d.t);
+      const wk = m.get(ws) || { t: ws, total: 0, entries: new Map(), stack: new Map() };
+      for (const e of d.entries) {
+        const cur = wk.entries.get(e.key) || { key: e.key, n: 0, by: {} };
+        cur.n += e.n; for (const [a, n] of Object.entries(e.by)) cur.by[a] = (cur.by[a] || 0) + n;
+        wk.entries.set(e.key, cur); wk.total += e.n;
+        const sk = colors.has(e.key) ? e.key : OTHER.key;
+        wk.stack.set(sk, (wk.stack.get(sk) || 0) + e.n);
+      }
+      m.set(ws, wk);
+    }
+    return [...m.values()].map(w => ({ ...w, entries: [...w.entries.values()].sort((a, b) => b.n - a.n) }));
+  }, [view, colors]);
+  const order = [...colors.keys(), OTHER.key];
+  const H = 236, top = 8, bottom = 22, left = 42, gapFrac = 0.28;
+  const max = niceMax(Math.max(1, ...weeks.map(w => w.total)));
+  const plotW = Math.max(120, width - left), bw = plotW / Math.max(1, weeks.length);
+  const y = v => top + (H - top - bottom) * (1 - v / max);
+  const ticks = [0, max / 4, max / 2, (3 * max) / 4, max];
+  const selKey = selected ? (colors.has(selected) ? selected : OTHER.key) : null;
+  const barW = Math.max(2, bw * (1 - gapFrac)), r = Math.min(4, barW / 3);
+  let lastMonth = -1;
+  const legendKeys = [...colors.keys()].concat(weeks.some(w => w.stack.has(OTHER.key)) ? [OTHER.key] : []);
+  return html`<div ref=${ref}>
+    <svg class="bars" width=${width} height=${H} role="img" aria-label="Weekly messages stacked by bot">
+      <defs>${weeks.map((wk, i) => html`<clipPath key=${wk.t} id=${`clip-${wk.t}`}>
+        <rect x=${left + i * bw + (bw - barW) / 2} y=${y(wk.total)} width=${barW} height=${Math.max(0, y(0) - y(wk.total)) + r} rx=${r} /></clipPath>`)}</defs>
+      ${ticks.map(t => html`<g key=${"t" + t}>
+        <line x1=${left} x2=${width} y1=${y(t)} y2=${y(t)} stroke="var(--border)" stroke-dasharray=${t === 0 ? "" : "2 3"} />
+        <text x=${left - 8} y=${y(t) + 3.5} text-anchor="end" class="num">${fmt(t)}</text></g>`)}
+      ${weeks.map((wk, i) => {
+        let acc = 0;
+        const m = new Date(Math.max(wk.t, view.start)).getUTCMonth();
+        const showLabel = m !== lastMonth; lastMonth = m;
+        const x = left + i * bw + (bw - barW) / 2;
+        return html`<g key=${wk.t} class="col" data-week=${iso(wk.t)}
+            onMouseMove=${e => setTip({ x: e.clientX, y: e.clientY, content: html`<${Breakdown} title=${`Week of ${fmtDate(Math.max(wk.t, view.start), { year: "numeric" })}`}
+              total=${wk.total} entries=${wk.entries} bots=${model.bots} selected=${selected} showAccts=${showAccts} />` })}
+            onMouseLeave=${() => setTip(null)}>
+          <rect class="col-hit" x=${left + i * bw} y=${top} width=${bw} height=${H - top - bottom} rx="4" />
+          <g clip-path=${`url(#clip-${wk.t})`}>
+            <g class=${`grow${stage >= 4 ? " in" : ""}`} style=${{ "--delay": `${Math.min(BARS.maxStagger, i * BARS.stagger)}ms` }}>
+              ${order.map(k => {
+                const v = wk.stack.get(k) || 0; if (!v) return null;
+                const y0 = y(acc), y1 = y(acc + v); acc += v;
+                return html`<rect key=${k} class="seg-rect" x=${x} width=${barW} y=${y1} height=${Math.max(0.5, y0 - y1)}
+                  fill=${k === OTHER.key ? OTHER.color : colors.get(k)} opacity=${selKey && k !== selKey ? 0.16 : 1} />`;
+              })}
+            </g>
+          </g>
+          ${showLabel && html`<text x=${x} y=${H - 6}>${fmtDate(Math.max(wk.t, view.start), { month: "short", day: undefined })}</text>`}
+        </g>`;
+      })}
+    </svg>
+    <div class="legend">
+      ${legendKeys.map(k => {
+        const b = k === OTHER.key ? null : model.bots.get(k);
+        return html`<button key=${k} onClick=${() => b && onSelect(selected === k ? null : k)} disabled=${!b}
+          style=${{ opacity: selKey && k !== selKey ? 0.4 : 1, cursor: b ? "pointer" : "default" }}>
+          ${b ? html`<${Avatar} bot=${b} size=${16} ring=${colors.get(k)} />`
+              : html`<i style=${{ width: 10, height: 10, borderRadius: 3, background: OTHER.color, display: "inline-block" }}></i>`}
+          ${b ? b.name : OTHER.name}
+        </button>`;
+      })}
+    </div>
+  </div>`;
+}
+
+// ---------- ranked bot list ----------
+function BotList({ ranked, colors, selected, onSelect, stage, showAccts }) {
+  const sum = ranked.reduce((s, b) => s + b.total, 0) || 1;
+  const max = (ranked[0] && ranked[0].total) || 1;
+  if (!ranked.length) return html`<div class="muted-note">Nothing matches this filter.</div>`;
+  return html`<ul class=${`bots${selected ? " has-sel" : ""}`}>
+    ${ranked.map((b, i) => {
+      const color = colors.get(b.key) || OTHER.color;
+      const delay = `${Math.min(ROWS.maxStagger, i * ROWS.stagger)}ms`;
+      return html`<li key=${b.key} class=${`enter${stage >= 5 ? " in" : ""}`} style=${{ "--delay": delay, "--rise": "4px" }}>
+        <button class="bot-row" data-bot=${b.name} aria-pressed=${selected === b.key} onClick=${() => onSelect(selected === b.key ? null : b.key)}
+          title=${selected === b.key ? "Clear filter" : `Show only ${b.name}`}>
+          <span class="rank num">${i + 1}</span>
+          <${Avatar} bot=${b} size=${24} ring=${colors.has(b.key) ? color : null} />
+          <span style=${{ minWidth: 0 }}>
+            <span class="name"><span class="txt">${b.name}</span><${KindBadge} kind=${b.kind} /><${AcctBadges} accounts=${b.accounts} show=${showAccts} /></span>
+            <div class="track"><div class=${`fill grow-x${stage >= 5 ? " in" : ""}`} style=${{ width: `${(b.total / max) * 100}%`, background: color, "--delay": delay }}></div></div>
+          </span>
+          <span class="nums num">${fmt(b.total)}<span class="pct">${fmt1((b.total / sum) * 100)}%</span></span>
+        </button>
+      </li>`;
+    })}
+  </ul>`;
+}
+
+// ---------- stats ----------
+function Stats({ s, stage }) {
+  const items = [
+    { hero: true, label: "Messages sent", value: fmt(s.total), sub: `${fmt(s.active)} of ${fmt(s.n)} days active` },
+    { label: "Per day", value: fmt1(s.perDay), unit: "avg", sub: `${fmt(s.n)}-day range` },
+    { label: "Per week", value: fmt1(s.perWeek), unit: "avg", sub: `${fmt1(s.n / 7)} weeks` },
+    { label: "Busiest day", value: fmt(s.busiest.value), sub: fmtDate(s.busiest.t, { weekday: "short", year: "numeric" }) },
+    { label: "Current streak", value: fmt(s.streak), unit: s.streak === 1 ? "day" : "days", sub: `Longest ${fmt(s.longest)} ${s.longest === 1 ? "day" : "days"}` },
+  ];
+  return html`<div class="stats">${items.map((it, i) => html`<div key=${it.label} data-stat=${it.label}
+      class=${`stat${it.hero ? " hero" : ""} enter${stage >= 1 ? " in" : ""}`} style=${{ "--delay": `${TIMING.stats + i * STATS.stagger}ms` }}>
+    <div class="label">${it.label}</div>
+    <div class="value num">${it.value}${it.unit && html`<span class="unit">${it.unit}</span>`}</div>
+    <div class="sub">${it.sub}</div>
+  </div>`)}</div>`;
+}
+
+// ---------- app ----------
+function App() {
+  const [accounts, setAccounts] = useState({});
+  const [config, setConfig] = useState({ kinds: {} });
+  const [view, setView] = useState(() => storage.get("msg-graph:view"));
+  const [kindFilter, setKindFilter] = useState(() => storage.get("msg-graph:kind") || "all");
+  const [merge, setMerge] = useState(() => storage.get("msg-graph:merge") !== "0");
+  const [bot, setBot] = useState(null);
+  const [tip, setTip] = useState(null);
+  const [errors, setErrors] = useState([]);
+  const [status, setStatus] = useState("Loading…");
+  const [dragging, setDragging] = useState(false);
+  const [theme, setTheme] = useState(() => storage.get("msg-graph:theme"));
+  const [stage, setStage] = useState(0);
+  const fileRef = useRef(null);
+
+  useEffect(() => {
+    if (theme) document.documentElement.dataset.theme = theme; else delete document.documentElement.dataset.theme;
+    storage.set("msg-graph:theme", theme);
+  }, [theme]);
+  useEffect(() => storage.set("msg-graph:kind", kindFilter), [kindFilter]);
+  useEffect(() => storage.set("msg-graph:merge", merge ? "1" : "0"), [merge]);
+  useEffect(() => { if (view) storage.set("msg-graph:view", view); }, [view]);
+  const isDark = theme ? theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+
+  const addParsed = useCallback(list => setAccounts(prev => {
+    const next = { ...prev };
+    for (const a of list) next[a.account] = mergeAccount(next[a.account], a);
+    return next;
+  }), []);
+  const readFiles = useCallback(async files => {
+    const ok = [], errs = [];
+    for (const f of files) { try { ok.push(normalize(JSON.parse(await f.text()), f.name)); } catch (e) { errs.push(`${f.name}: ${e.message}`); } }
+    addParsed(ok); setErrors(errs);
+    if (ok.length) setStatus(`Loaded ${ok.map(a => a.sources[0]).join(", ")}`);
+  }, [addParsed]);
+  const fetchFiles = useCallback(async names => {
+    const ok = [], errs = [];
+    for (const n of names) {
+      try { const r = await fetch(`./data/${n}`, { cache: "no-store" }); if (!r.ok) throw new Error(`HTTP ${r.status}`); ok.push(normalize(await r.json(), n)); }
+      catch (e) { errs.push(`${n}: ${e.message}`); }
+    }
+    addParsed(ok); setErrors(errs);
+    return ok.length;
+  }, [addParsed]);
+
+  useEffect(() => {
+    (async () => {
+      try { const r = await fetch("./config.json", { cache: "no-store" }); if (r.ok) setConfig({ kinds: (await r.json()).kinds || {} }); } catch {}
+      try {
+        const r = await fetch("./data/index.json", { cache: "no-store" });
+        if (!r.ok) throw new Error();
+        const idx = await r.json();
+        const n = await fetchFiles(Array.isArray(idx) ? idx : idx.files || []);
+        setStatus(n ? `Auto-loaded ${n} file${n === 1 ? "" : "s"} from data/index.json` : "data/index.json listed no loadable files");
+      } catch {
+        setStatus(location.protocol === "file:"
+          ? "Opened via file://, so auto-load and config.json are blocked. Drop JSON files here, or run python3 -m http.server."
+          : "No data/index.json. Drop account JSON files anywhere, or use Load.");
+      }
+    })();
+  }, [fetchFiles]);
+
+  useEffect(() => {
+    let depth = 0;
+    const isFiles = e => e.dataTransfer && [...e.dataTransfer.types].includes("Files");
+    const evs = {
+      dragenter: e => { if (isFiles(e)) { depth++; setDragging(true); } },
+      dragleave: () => { depth = Math.max(0, depth - 1); if (!depth) setDragging(false); },
+      dragover: e => e.preventDefault(),
+      drop: e => { e.preventDefault(); depth = 0; setDragging(false); readFiles([...e.dataTransfer.files]); },
+    };
+    Object.entries(evs).forEach(([k, f]) => window.addEventListener(k, f));
+    return () => Object.entries(evs).forEach(([k, f]) => window.removeEventListener(k, f));
+  }, [readFiles]);
+
+  const loaded = Object.keys(accounts).sort();
+  const tabs = [...KNOWN_ACCOUNTS, ...loaded.filter(a => !KNOWN_ACCOUNTS.includes(a)), "all"];
+  const activeView = view && (view === "all" ? loaded.length > 0 : accounts[view]) ? view
+    : accounts.personal ? "personal" : loaded.length > 1 ? "all" : loaded[0] || null;
+  const inView = activeView === "all" ? loaded.map(a => accounts[a]) : activeView ? [accounts[activeView]] : [];
+  const showAccts = inView.length > 1;
+
+  const model = useMemo(() => combine(inView, config, merge), [accounts, activeView, config, merge]);
+  const base = useMemo(() => buildView(model, kindFilter, null), [model, kindFilter]);
+  const activeBot = bot && base && base.ranked.some(b => b.key === bot) ? bot : null;
+  const viewData = useMemo(() => activeBot ? buildView(model, kindFilter, activeBot) : base, [model, kindFilter, activeBot, base]);
+  const stats = useMemo(() => viewData && computeStats(viewData.series), [viewData]);
+  const colors = useMemo(() => {
+    const m = new Map();
+    if (base) base.ranked.filter(b => b.total > 0).slice(0, PALETTE.length).forEach((b, i) => m.set(b.key, PALETTE[i]));
+    return m;
+  }, [base]);
+  const kindCounts = useMemo(() => {
+    const c = { all: 0, bots: 0, groups: 0 };
+    for (const b of model.bots.values()) { c.all++; c[b.kind === "bot" ? "bots" : "groups"]++; }
+    return c;
+  }, [model]);
+
+  // Stage-driven entrance (see ANIMATION STORYBOARD): replays on account switch once data is present.
+  const hasData = !!base;
+  useEffect(() => {
+    if (!hasData) return;
+    setStage(0);
+    const timers = [
+      setTimeout(() => setStage(1), TIMING.stats),
+      setTimeout(() => setStage(2), TIMING.heatmap),
+      setTimeout(() => setStage(3), TIMING.weekday),
+      setTimeout(() => setStage(4), TIMING.bars),
+      setTimeout(() => setStage(5), TIMING.botRows),
+    ];
+    return () => timers.forEach(clearTimeout);
+  }, [hasData, activeView]);
+
+  const selBot = activeBot && model.bots.get(activeBot);
+  const fmtGen = g => { const d = new Date(g); return isNaN(d) ? g : d.toLocaleString(undefined, { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }); };
+  const scope = selBot ? `${selBot.name} only` : kindFilter === "all" ? "Bots, groups & channels" : kindFilter === "bots" ? "Bots only" : "Groups & channels only";
+
+  return html`<main>
+    <header class="head">
+      <div>
+        <div class="eyebrow">Grok Bot · ${activeView ? (activeView === "all" ? `All accounts (${inView.map(a => cap(a.account)).join(" + ")})` : cap(activeView)) : "No data"}</div>
+        <h1>Messages sent</h1>
+      </div>
+      <div class="controls">
+        <div class="seg" role="group" aria-label="Account">
+          ${tabs.map(t => html`<button key=${t} data-account=${t} aria-pressed=${activeView === t} disabled=${t === "all" ? loaded.length === 0 : !accounts[t]}
+            onClick=${() => { setView(t); setTip(null); }} title=${t !== "all" && !accounts[t] ? `No ${t} data loaded` : ""}>
+            ${t !== "all" && html`<span class="dot" style=${{ background: acctColor(t) }}></span>`}
+            ${t === "all" ? "All" : cap(t)}</button>`)}
+        </div>
+        <div class="seg" role="group" aria-label="Kind">
+          ${[["all", "All"], ["bots", "Bots"], ["groups", "Groups"]].map(([k, l]) => html`<button key=${k} data-kind=${k} aria-pressed=${kindFilter === k}
+            onClick=${() => setKindFilter(k)} title=${k === "groups" ? "Group chats and channels" : ""}>${l}<span class="count num">${kindCounts[k]}</span></button>`)}
+        </div>
+        <button class="icon-btn" onClick=${() => fileRef.current.click()} title="Load account JSON files (or drop them anywhere)">${ICONS.upload}Load</button>
+        <button class="icon-btn" onClick=${() => setTheme(isDark ? "light" : "dark")} aria-label="Toggle theme" title="Toggle light/dark">${isDark ? ICONS.sun : ICONS.moon}</button>
+        <input ref=${fileRef} type="file" accept=".json,application/json" multiple hidden onChange=${e => { readFiles([...e.target.files]); e.target.value = ""; }} />
+      </div>
+    </header>
+    ${errors.length > 0 && html`<div class="err">${errors.map(e => html`<div key=${e}>${e}</div>`)}</div>`}
+
+    ${!viewData ? html`<div class="card empty-state">
+      <h2>No data loaded</h2>
+      <p>${status}</p>
+      <button class="icon-btn" style=${{ display: "inline-flex" }} onClick=${() => fetchFiles(["sample-work.json"])}>Load fake sample (sample-work.json)</button>
+    </div>` : html`<div class="stack">
+      <section class="card">
+        ${selBot && html`<div style=${{ display: "flex", gap: 8, alignItems: "center", marginBottom: 14 }}>
+          <span class="card-sub">Filtered to</span>
+          <button class="chip" data-clear onClick=${() => setBot(null)} title="Clear filter"><${Avatar} bot=${selBot} size=${18} />${selBot.name}<span class="x">×</span></button>
+        </div>`}
+        <${Stats} s=${stats} stage=${stage} />
+      </section>
+
+      <div class="row-a">
+        <section class=${`card enter${stage >= 2 ? " in" : ""}`}>
+          <div class="card-head"><span class="card-title">Daily activity</span><span class="card-sub">${scope}</span></div>
+          <${Heatmap} view=${viewData} model=${model} selected=${activeBot} colors=${colors} setTip=${setTip} showAccts=${showAccts} />
+        </section>
+        <section class=${`card enter${stage >= 2 ? " in" : ""}`} style=${{ "--delay": "40ms" }}>
+          <div class="card-head"><span class="card-title">By weekday</span></div>
+          <${Weekday} view=${viewData} selected=${activeBot} colors=${colors} stage=${stage} />
+        </section>
+      </div>
+
+      <div class="row-b">
+        <section class="card">
+          <div class="card-head"><span class="card-title">Weekly, by bot</span>
+            ${showAccts && html`<label class="toggle" title="Combine bots that share a name across accounts">
+              <input type="checkbox" data-merge checked=${merge} onChange=${e => setMerge(e.target.checked)} />Merge same-name bots</label>`}
+          </div>
+          <${WeeklyBars} view=${base} model=${model} colors=${colors} selected=${activeBot} onSelect=${setBot} setTip=${setTip} stage=${stage} showAccts=${showAccts} />
+        </section>
+        <section class="card list-card">
+          <div class="card-head"><span class="card-title">Ranking</span><span class="card-sub">${fmt(base.ranked.length)} · click to filter</span></div>
+          <div class="list-wrap">
+            <${BotList} ranked=${base.ranked} colors=${colors} selected=${activeBot} onSelect=${setBot} stage=${stage} showAccts=${showAccts} />
+          </div>
+        </section>
+      </div>
+    </div>`}
+
+    <footer class="foot">
+      <div>${status}</div>
+      ${inView.map(a => html`<div key=${a.account}><span class="acct" style=${{ "--c": acctColor(a.account) }}>${a.account.charAt(0).toUpperCase()}</span>
+        <span style=${{ flex: "1 1 0", minWidth: 0 }}>${cap(a.account)} · ${a.sources.join(", ")}${a.generatedAt ? ` · generated ${fmtGen(a.generatedAt)}` : ""}${a.timezone ? ` · ${a.timezone}` : ""}</span></div>`)}
+    </footer>
+    <${Tooltip} tip=${tip} />
+    ${dragging && html`<div class="drop">Drop account JSON files to load</div>`}
+  </main>`;
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(html`<${App} />`);
+</script>
+</body>
+</html>

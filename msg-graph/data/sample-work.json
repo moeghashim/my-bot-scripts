@@ -1,0 +1,2874 @@
+{
+ "account": "work",
+ "generatedAt": "2026-10-13T09:00:00-07:00",
+ "timezone": "America/Los_Angeles",
+ "_note": "FAKE sample data for testing msg-graph. Not real usage.",
+ "bots": {
+  "demo-alpha": {
+   "name": "Demo Bot Alpha (fake)"
+  },
+  "demo-beta": {
+   "name": "Demo Bot Beta (fake)"
+  },
+  "demo-gamma": {
+   "name": "Demo Bot Gamma (fake)"
+  },
+  "demo-delta": {
+   "name": "Demo Bot Delta (fake)"
+  },
+  "demo-team": {
+   "name": "Demo Team Chat (fake)",
+   "kind": "group"
+  },
+  "demo-alerts": {
+   "name": "Demo Alerts Channel (fake)",
+   "kind": "channel"
+  }
+ },
+ "days": [
+  {
+   "date": "2025-10-13",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 5,
+    "Demo Bot Beta (fake)": 2,
+    "Demo Bot Gamma (fake)": 1
+   }
+  },
+  {
+   "date": "2025-10-14",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 9,
+    "Demo Bot Beta (fake)": 3,
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2025-10-15",
+   "byBot": {
+    "Demo Bot Gamma (fake)": 2
+   }
+  },
+  {
+   "date": "2025-10-16",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 9,
+    "Demo Bot Gamma (fake)": 1
+   }
+  },
+  {
+   "date": "2025-10-17",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 3,
+    "Demo Bot Beta (fake)": 1,
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 1,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2025-10-18",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 3
+   }
+  },
+  {
+   "date": "2025-10-19",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 2
+   }
+  },
+  {
+   "date": "2025-10-20",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 3,
+    "Demo Bot Beta (fake)": 4
+   }
+  },
+  {
+   "date": "2025-10-21",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 12,
+    "Demo Bot Beta (fake)": 2,
+    "Demo Bot Gamma (fake)": 3,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2025-10-22",
+   "byBot": {
+    "Demo Bot Beta (fake)": 4,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2025-10-23",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 6,
+    "Demo Team Chat (fake)": 2
+   }
+  },
+  {
+   "date": "2025-10-24",
+   "byBot": {
+    "Demo Bot Gamma (fake)": 3
+   }
+  },
+  {
+   "date": "2025-10-25",
+   "byBot": {}
+  },
+  {
+   "date": "2025-10-26",
+   "byBot": {
+    "Demo Bot Beta (fake)": 1
+   }
+  },
+  {
+   "date": "2025-10-27",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 6,
+    "Demo Bot Beta (fake)": 4,
+    "Demo Team Chat (fake)": 2
+   }
+  },
+  {
+   "date": "2025-10-28",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 5,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2025-10-29",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 6,
+    "Demo Bot Beta (fake)": 8,
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Team Chat (fake)": 3
+   }
+  },
+  {
+   "date": "2025-10-30",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 2,
+    "Demo Bot Delta (fake)": 1
+   }
+  },
+  {
+   "date": "2025-10-31",
+   "byBot": {
+    "Demo Bot Beta (fake)": 1,
+    "Demo Bot Gamma (fake)": 3,
+    "Demo Team Chat (fake)": 2
+   }
+  },
+  {
+   "date": "2025-11-01",
+   "byBot": {
+    "Demo Bot Beta (fake)": 2
+   }
+  },
+  {
+   "date": "2025-11-02",
+   "byBot": {
+    "Demo Bot Beta (fake)": 1
+   }
+  },
+  {
+   "date": "2025-11-03",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 11,
+    "Demo Bot Beta (fake)": 4,
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Team Chat (fake)": 2
+   }
+  },
+  {
+   "date": "2025-11-04",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 10,
+    "Demo Bot Gamma (fake)": 1
+   }
+  },
+  {
+   "date": "2025-11-05",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 11,
+    "Demo Bot Beta (fake)": 5,
+    "Demo Bot Gamma (fake)": 1
+   }
+  },
+  {
+   "date": "2025-11-06",
+   "byBot": {
+    "Demo Bot Beta (fake)": 4
+   }
+  },
+  {
+   "date": "2025-11-07",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 11,
+    "Demo Bot Beta (fake)": 1,
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2025-11-08",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 1,
+    "Demo Bot Beta (fake)": 1
+   }
+  },
+  {
+   "date": "2025-11-09",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 3
+   }
+  },
+  {
+   "date": "2025-11-10",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 8,
+    "Demo Bot Beta (fake)": 7,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2025-11-11",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 3,
+    "Demo Bot Beta (fake)": 1,
+    "Demo Bot Gamma (fake)": 2
+   }
+  },
+  {
+   "date": "2025-11-12",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 5,
+    "Demo Bot Beta (fake)": 1,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 3
+   }
+  },
+  {
+   "date": "2025-11-13",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 6,
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2025-11-14",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 2,
+    "Demo Bot Beta (fake)": 4,
+    "Demo Bot Gamma (fake)": 3,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2025-11-15",
+   "byBot": {
+    "Demo Bot Beta (fake)": 1
+   }
+  },
+  {
+   "date": "2025-11-16",
+   "byBot": {}
+  },
+  {
+   "date": "2025-11-17",
+   "byBot": {
+    "Demo Bot Beta (fake)": 5
+   }
+  },
+  {
+   "date": "2025-11-18",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 12,
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Bot Delta (fake)": 1
+   }
+  },
+  {
+   "date": "2025-11-19",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 12,
+    "Demo Bot Beta (fake)": 1,
+    "Demo Bot Gamma (fake)": 2
+   }
+  },
+  {
+   "date": "2025-11-20",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 7,
+    "Demo Bot Gamma (fake)": 2
+   }
+  },
+  {
+   "date": "2025-11-21",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 6,
+    "Demo Bot Beta (fake)": 2
+   }
+  },
+  {
+   "date": "2025-11-22",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 1
+   }
+  },
+  {
+   "date": "2025-11-23",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 1
+   }
+  },
+  {
+   "date": "2025-11-24",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 14,
+    "Demo Bot Beta (fake)": 3,
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2025-11-25",
+   "byBot": {
+    "Demo Bot Beta (fake)": 4,
+    "Demo Bot Gamma (fake)": 2
+   }
+  },
+  {
+   "date": "2025-11-26",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 9,
+    "Demo Bot Beta (fake)": 3,
+    "Demo Team Chat (fake)": 2
+   }
+  },
+  {
+   "date": "2025-11-27",
+   "byBot": {
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2025-11-28",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 14,
+    "Demo Bot Beta (fake)": 6,
+    "Demo Bot Gamma (fake)": 4,
+    "Demo Bot Delta (fake)": 1
+   }
+  },
+  {
+   "date": "2025-11-29",
+   "byBot": {}
+  },
+  {
+   "date": "2025-11-30",
+   "byBot": {}
+  },
+  {
+   "date": "2025-12-01",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 5,
+    "Demo Bot Beta (fake)": 3,
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Bot Delta (fake)": 1
+   }
+  },
+  {
+   "date": "2025-12-02",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 14,
+    "Demo Bot Beta (fake)": 5,
+    "Demo Team Chat (fake)": 2
+   }
+  },
+  {
+   "date": "2025-12-03",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 1,
+    "Demo Bot Beta (fake)": 1,
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2025-12-04",
+   "byBot": {
+    "Demo Bot Beta (fake)": 2,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2025-12-05",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 7,
+    "Demo Bot Beta (fake)": 3,
+    "Demo Bot Gamma (fake)": 3,
+    "Demo Team Chat (fake)": 2
+   }
+  },
+  {
+   "date": "2025-12-06",
+   "byBot": {}
+  },
+  {
+   "date": "2025-12-07",
+   "byBot": {}
+  },
+  {
+   "date": "2025-12-08",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 11,
+    "Demo Bot Beta (fake)": 3,
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2025-12-09",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 13,
+    "Demo Bot Beta (fake)": 3,
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Bot Delta (fake)": 1
+   }
+  },
+  {
+   "date": "2025-12-10",
+   "byBot": {
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2025-12-11",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 6,
+    "Demo Bot Beta (fake)": 4,
+    "Demo Bot Gamma (fake)": 3,
+    "Demo Team Chat (fake)": 2
+   }
+  },
+  {
+   "date": "2025-12-12",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 18,
+    "Demo Bot Beta (fake)": 7,
+    "Demo Bot Gamma (fake)": 6,
+    "Demo Team Chat (fake)": 3
+   }
+  },
+  {
+   "date": "2025-12-13",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 2
+   }
+  },
+  {
+   "date": "2025-12-14",
+   "byBot": {
+    "Demo Bot Beta (fake)": 2
+   }
+  },
+  {
+   "date": "2025-12-15",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 1,
+    "Demo Bot Beta (fake)": 2,
+    "Demo Bot Gamma (fake)": 1
+   }
+  },
+  {
+   "date": "2025-12-16",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 18,
+    "Demo Bot Beta (fake)": 8,
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Team Chat (fake)": 3
+   }
+  },
+  {
+   "date": "2025-12-17",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 10,
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Bot Delta (fake)": 1
+   }
+  },
+  {
+   "date": "2025-12-18",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 15,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2025-12-19",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 3,
+    "Demo Bot Beta (fake)": 3,
+    "Demo Team Chat (fake)": 2,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2025-12-20",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 1
+   }
+  },
+  {
+   "date": "2025-12-21",
+   "byBot": {}
+  },
+  {
+   "date": "2025-12-22",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 2,
+    "Demo Bot Beta (fake)": 7,
+    "Demo Bot Gamma (fake)": 3,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2025-12-23",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 14,
+    "Demo Bot Beta (fake)": 5,
+    "Demo Team Chat (fake)": 2
+   }
+  },
+  {
+   "date": "2025-12-24",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 17,
+    "Demo Bot Beta (fake)": 5,
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2025-12-25",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 7,
+    "Demo Bot Beta (fake)": 9,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 2
+   }
+  },
+  {
+   "date": "2025-12-26",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 2,
+    "Demo Bot Beta (fake)": 6,
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Bot Delta (fake)": 1
+   }
+  },
+  {
+   "date": "2025-12-27",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 3
+   }
+  },
+  {
+   "date": "2025-12-28",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 1,
+    "Demo Bot Beta (fake)": 2
+   }
+  },
+  {
+   "date": "2025-12-29",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 4,
+    "Demo Bot Beta (fake)": 1,
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2025-12-30",
+   "byBot": {
+    "Demo Bot Beta (fake)": 2,
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2025-12-31",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 18,
+    "Demo Bot Beta (fake)": 2,
+    "Demo Bot Gamma (fake)": 4,
+    "Demo Team Chat (fake)": 2
+   }
+  },
+  {
+   "date": "2026-01-01",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 3,
+    "Demo Bot Delta (fake)": 1
+   }
+  },
+  {
+   "date": "2026-01-02",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 13,
+    "Demo Bot Gamma (fake)": 4,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 3,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-01-03",
+   "byBot": {}
+  },
+  {
+   "date": "2026-01-04",
+   "byBot": {
+    "Demo Bot Beta (fake)": 1
+   }
+  },
+  {
+   "date": "2026-01-05",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 11,
+    "Demo Bot Beta (fake)": 1,
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-01-06",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 8,
+    "Demo Bot Beta (fake)": 5,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-01-07",
+   "byBot": {
+    "Demo Bot Beta (fake)": 3,
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-01-08",
+   "byBot": {
+    "Demo Bot Gamma (fake)": 2
+   }
+  },
+  {
+   "date": "2026-01-09",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 1,
+    "Demo Bot Beta (fake)": 4,
+    "Demo Team Chat (fake)": 2
+   }
+  },
+  {
+   "date": "2026-01-10",
+   "byBot": {
+    "Demo Bot Beta (fake)": 3
+   }
+  },
+  {
+   "date": "2026-01-11",
+   "byBot": {
+    "Demo Bot Beta (fake)": 1
+   }
+  },
+  {
+   "date": "2026-01-12",
+   "byBot": {
+    "Demo Bot Beta (fake)": 2,
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-01-13",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 7
+   }
+  },
+  {
+   "date": "2026-01-14",
+   "byBot": {
+    "Demo Bot Beta (fake)": 7,
+    "Demo Bot Gamma (fake)": 4,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-01-15",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 7,
+    "Demo Bot Beta (fake)": 5,
+    "Demo Bot Gamma (fake)": 1
+   }
+  },
+  {
+   "date": "2026-01-16",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 7,
+    "Demo Bot Beta (fake)": 1,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-01-17",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 1
+   }
+  },
+  {
+   "date": "2026-01-18",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 1
+   }
+  },
+  {
+   "date": "2026-01-19",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 10,
+    "Demo Bot Beta (fake)": 6,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-01-20",
+   "byBot": {
+    "Demo Bot Beta (fake)": 1,
+    "Demo Bot Gamma (fake)": 2
+   }
+  },
+  {
+   "date": "2026-01-21",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 10,
+    "Demo Bot Beta (fake)": 1,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-01-22",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 12,
+    "Demo Bot Beta (fake)": 2,
+    "Demo Bot Gamma (fake)": 2
+   }
+  },
+  {
+   "date": "2026-01-23",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 8,
+    "Demo Bot Delta (fake)": 1
+   }
+  },
+  {
+   "date": "2026-01-24",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 3,
+    "Demo Bot Beta (fake)": 1
+   }
+  },
+  {
+   "date": "2026-01-25",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 3
+   }
+  },
+  {
+   "date": "2026-01-26",
+   "byBot": {
+    "Demo Bot Beta (fake)": 4,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 1,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-01-27",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 10,
+    "Demo Bot Beta (fake)": 6,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 2
+   }
+  },
+  {
+   "date": "2026-01-28",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 6,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 3
+   }
+  },
+  {
+   "date": "2026-01-29",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 12,
+    "Demo Bot Beta (fake)": 2,
+    "Demo Bot Gamma (fake)": 2
+   }
+  },
+  {
+   "date": "2026-01-30",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 3,
+    "Demo Bot Beta (fake)": 6,
+    "Demo Bot Gamma (fake)": 3,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-01-31",
+   "byBot": {}
+  },
+  {
+   "date": "2026-02-01",
+   "byBot": {
+    "Demo Bot Beta (fake)": 1
+   }
+  },
+  {
+   "date": "2026-02-02",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 10,
+    "Demo Bot Beta (fake)": 1,
+    "Demo Team Chat (fake)": 3
+   }
+  },
+  {
+   "date": "2026-02-03",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 7,
+    "Demo Bot Beta (fake)": 8,
+    "Demo Bot Gamma (fake)": 4,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-02-04",
+   "byBot": {
+    "Demo Bot Beta (fake)": 6,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-02-05",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 18,
+    "Demo Bot Beta (fake)": 1,
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 2
+   }
+  },
+  {
+   "date": "2026-02-06",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 12,
+    "Demo Bot Beta (fake)": 5,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-02-07",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 1,
+    "Demo Bot Beta (fake)": 1
+   }
+  },
+  {
+   "date": "2026-02-08",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 1
+   }
+  },
+  {
+   "date": "2026-02-09",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 7,
+    "Demo Bot Beta (fake)": 4,
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-02-10",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 12,
+    "Demo Bot Beta (fake)": 8
+   }
+  },
+  {
+   "date": "2026-02-11",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 22,
+    "Demo Bot Beta (fake)": 5,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-02-12",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 12,
+    "Demo Bot Beta (fake)": 6,
+    "Demo Bot Gamma (fake)": 3
+   }
+  },
+  {
+   "date": "2026-02-13",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 7,
+    "Demo Bot Beta (fake)": 2,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-02-14",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 1,
+    "Demo Bot Beta (fake)": 1
+   }
+  },
+  {
+   "date": "2026-02-15",
+   "byBot": {}
+  },
+  {
+   "date": "2026-02-16",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 1,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-02-17",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 1,
+    "Demo Bot Beta (fake)": 6,
+    "Demo Bot Delta (fake)": 1
+   }
+  },
+  {
+   "date": "2026-02-18",
+   "byBot": {
+    "Demo Bot Beta (fake)": 1,
+    "Demo Bot Gamma (fake)": 2
+   }
+  },
+  {
+   "date": "2026-02-19",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 16,
+    "Demo Bot Beta (fake)": 2,
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 3
+   }
+  },
+  {
+   "date": "2026-02-20",
+   "byBot": {
+    "Demo Bot Beta (fake)": 2,
+    "Demo Bot Gamma (fake)": 4,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-02-21",
+   "byBot": {
+    "Demo Bot Beta (fake)": 1
+   }
+  },
+  {
+   "date": "2026-02-22",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 2,
+    "Demo Bot Beta (fake)": 1
+   }
+  },
+  {
+   "date": "2026-02-23",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 5,
+    "Demo Bot Beta (fake)": 7,
+    "Demo Bot Gamma (fake)": 2
+   }
+  },
+  {
+   "date": "2026-02-24",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 10,
+    "Demo Bot Beta (fake)": 4
+   }
+  },
+  {
+   "date": "2026-02-25",
+   "byBot": {
+    "Demo Bot Beta (fake)": 4,
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Team Chat (fake)": 2,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-02-26",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 6,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-02-27",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 1,
+    "Demo Bot Beta (fake)": 7,
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-02-28",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 1,
+    "Demo Bot Beta (fake)": 1
+   }
+  },
+  {
+   "date": "2026-03-01",
+   "byBot": {}
+  },
+  {
+   "date": "2026-03-02",
+   "byBot": {
+    "Demo Bot Beta (fake)": 3,
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-03-03",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 10,
+    "Demo Bot Gamma (fake)": 3,
+    "Demo Bot Delta (fake)": 1
+   }
+  },
+  {
+   "date": "2026-03-04",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 18,
+    "Demo Bot Beta (fake)": 12,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-03-05",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 17,
+    "Demo Bot Beta (fake)": 3,
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Team Chat (fake)": 2
+   }
+  },
+  {
+   "date": "2026-03-06",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 4,
+    "Demo Bot Beta (fake)": 3,
+    "Demo Bot Gamma (fake)": 2
+   }
+  },
+  {
+   "date": "2026-03-07",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 3,
+    "Demo Bot Beta (fake)": 2,
+    "Demo Bot Gamma (fake)": 1
+   }
+  },
+  {
+   "date": "2026-03-08",
+   "byBot": {}
+  },
+  {
+   "date": "2026-03-09",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 8,
+    "Demo Bot Beta (fake)": 8,
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 1,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-03-10",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 7,
+    "Demo Bot Beta (fake)": 5,
+    "Demo Bot Gamma (fake)": 5,
+    "Demo Team Chat (fake)": 1,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-03-11",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 3,
+    "Demo Bot Beta (fake)": 5
+   }
+  },
+  {
+   "date": "2026-03-12",
+   "byBot": {
+    "Demo Bot Beta (fake)": 3,
+    "Demo Bot Gamma (fake)": 1
+   }
+  },
+  {
+   "date": "2026-03-13",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 14,
+    "Demo Bot Beta (fake)": 1,
+    "Demo Bot Gamma (fake)": 1
+   }
+  },
+  {
+   "date": "2026-03-14",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 3,
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-03-15",
+   "byBot": {
+    "Demo Bot Beta (fake)": 1,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-03-16",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 11,
+    "Demo Bot Beta (fake)": 5,
+    "Demo Bot Gamma (fake)": 3,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-03-17",
+   "byBot": {
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 1,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-03-18",
+   "byBot": {
+    "Demo Bot Beta (fake)": 9,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-03-19",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 7,
+    "Demo Bot Beta (fake)": 5,
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-03-20",
+   "byBot": {
+    "Demo Bot Beta (fake)": 5,
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-03-21",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 4,
+    "Demo Bot Beta (fake)": 1
+   }
+  },
+  {
+   "date": "2026-03-22",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 2
+   }
+  },
+  {
+   "date": "2026-03-23",
+   "byBot": {
+    "Demo Bot Beta (fake)": 5,
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-03-24",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 4,
+    "Demo Bot Beta (fake)": 1,
+    "Demo Bot Gamma (fake)": 4
+   }
+  },
+  {
+   "date": "2026-03-25",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 12,
+    "Demo Bot Beta (fake)": 8
+   }
+  },
+  {
+   "date": "2026-03-26",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 8,
+    "Demo Bot Beta (fake)": 7,
+    "Demo Bot Gamma (fake)": 2
+   }
+  },
+  {
+   "date": "2026-03-27",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 10,
+    "Demo Bot Beta (fake)": 4,
+    "Demo Bot Gamma (fake)": 4,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-03-28",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 1,
+    "Demo Bot Beta (fake)": 2
+   }
+  },
+  {
+   "date": "2026-03-29",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 6,
+    "Demo Bot Beta (fake)": 1
+   }
+  },
+  {
+   "date": "2026-03-30",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 5,
+    "Demo Bot Beta (fake)": 5,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 2
+   }
+  },
+  {
+   "date": "2026-03-31",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 5,
+    "Demo Bot Beta (fake)": 3,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-04-01",
+   "byBot": {
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Alerts Channel (fake)": 2
+   }
+  },
+  {
+   "date": "2026-04-02",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 12,
+    "Demo Bot Beta (fake)": 3,
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Bot Delta (fake)": 1
+   }
+  },
+  {
+   "date": "2026-04-03",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 5,
+    "Demo Bot Beta (fake)": 6,
+    "Demo Bot Gamma (fake)": 6,
+    "Demo Bot Delta (fake)": 2,
+    "Demo Team Chat (fake)": 2
+   }
+  },
+  {
+   "date": "2026-04-04",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 2,
+    "Demo Bot Beta (fake)": 1
+   }
+  },
+  {
+   "date": "2026-04-05",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 1
+   }
+  },
+  {
+   "date": "2026-04-06",
+   "byBot": {
+    "Demo Bot Gamma (fake)": 4,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-04-07",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 17,
+    "Demo Bot Beta (fake)": 4
+   }
+  },
+  {
+   "date": "2026-04-08",
+   "byBot": {
+    "Demo Bot Beta (fake)": 14,
+    "Demo Team Chat (fake)": 2
+   }
+  },
+  {
+   "date": "2026-04-09",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 11,
+    "Demo Bot Beta (fake)": 1,
+    "Demo Bot Delta (fake)": 1
+   }
+  },
+  {
+   "date": "2026-04-10",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 9,
+    "Demo Bot Beta (fake)": 2,
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-04-11",
+   "byBot": {
+    "Demo Bot Beta (fake)": 1,
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-04-12",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 6,
+    "Demo Bot Beta (fake)": 1
+   }
+  },
+  {
+   "date": "2026-04-13",
+   "byBot": {
+    "Demo Bot Beta (fake)": 9,
+    "Demo Bot Gamma (fake)": 5,
+    "Demo Bot Delta (fake)": 2,
+    "Demo Team Chat (fake)": 2
+   }
+  },
+  {
+   "date": "2026-04-14",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 2,
+    "Demo Bot Beta (fake)": 9,
+    "Demo Bot Gamma (fake)": 2
+   }
+  },
+  {
+   "date": "2026-04-15",
+   "byBot": {
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-04-16",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 9,
+    "Demo Bot Beta (fake)": 4,
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Bot Delta (fake)": 1
+   }
+  },
+  {
+   "date": "2026-04-17",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 17,
+    "Demo Bot Beta (fake)": 7,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 5
+   }
+  },
+  {
+   "date": "2026-04-18",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 1,
+    "Demo Bot Beta (fake)": 1,
+    "Demo Bot Gamma (fake)": 1
+   }
+  },
+  {
+   "date": "2026-04-19",
+   "byBot": {}
+  },
+  {
+   "date": "2026-04-20",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 12,
+    "Demo Bot Beta (fake)": 4,
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 1,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-04-21",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 9,
+    "Demo Bot Beta (fake)": 8,
+    "Demo Bot Gamma (fake)": 4,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-04-22",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 7,
+    "Demo Bot Gamma (fake)": 3,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-04-23",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 9,
+    "Demo Bot Beta (fake)": 3,
+    "Demo Bot Delta (fake)": 1
+   }
+  },
+  {
+   "date": "2026-04-24",
+   "byBot": {
+    "Demo Bot Beta (fake)": 3,
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Team Chat (fake)": 4
+   }
+  },
+  {
+   "date": "2026-04-25",
+   "byBot": {}
+  },
+  {
+   "date": "2026-04-26",
+   "byBot": {}
+  },
+  {
+   "date": "2026-04-27",
+   "byBot": {
+    "Demo Bot Beta (fake)": 5,
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Team Chat (fake)": 3
+   }
+  },
+  {
+   "date": "2026-04-28",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 14,
+    "Demo Bot Beta (fake)": 4,
+    "Demo Team Chat (fake)": 2
+   }
+  },
+  {
+   "date": "2026-04-29",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 5,
+    "Demo Bot Beta (fake)": 3,
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Team Chat (fake)": 2
+   }
+  },
+  {
+   "date": "2026-04-30",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 5,
+    "Demo Bot Beta (fake)": 8
+   }
+  },
+  {
+   "date": "2026-05-01",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 13,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 2,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-05-02",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 3,
+    "Demo Bot Beta (fake)": 1
+   }
+  },
+  {
+   "date": "2026-05-03",
+   "byBot": {
+    "Demo Bot Beta (fake)": 1,
+    "Demo Bot Gamma (fake)": 1
+   }
+  },
+  {
+   "date": "2026-05-04",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 10,
+    "Demo Bot Beta (fake)": 5,
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-05-05",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 19,
+    "Demo Bot Beta (fake)": 8,
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Team Chat (fake)": 2
+   }
+  },
+  {
+   "date": "2026-05-06",
+   "byBot": {
+    "Demo Bot Beta (fake)": 18,
+    "Demo Bot Gamma (fake)": 3,
+    "Demo Team Chat (fake)": 2,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-05-07",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 6,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 1,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-05-08",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 7,
+    "Demo Bot Beta (fake)": 7,
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Team Chat (fake)": 5
+   }
+  },
+  {
+   "date": "2026-05-09",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 3
+   }
+  },
+  {
+   "date": "2026-05-10",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 2,
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-05-11",
+   "byBot": {
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Team Chat (fake)": 1,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-05-12",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 1,
+    "Demo Bot Beta (fake)": 2,
+    "Demo Bot Gamma (fake)": 3,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 4
+   }
+  },
+  {
+   "date": "2026-05-13",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 14,
+    "Demo Bot Beta (fake)": 4,
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-05-14",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 13,
+    "Demo Bot Beta (fake)": 8,
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-05-15",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 21,
+    "Demo Bot Beta (fake)": 5,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-05-16",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 4,
+    "Demo Bot Beta (fake)": 2
+   }
+  },
+  {
+   "date": "2026-05-17",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 3,
+    "Demo Bot Beta (fake)": 1
+   }
+  },
+  {
+   "date": "2026-05-18",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 9,
+    "Demo Bot Beta (fake)": 6,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-05-19",
+   "byBot": {
+    "Demo Bot Beta (fake)": 1
+   }
+  },
+  {
+   "date": "2026-05-20",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 13,
+    "Demo Bot Beta (fake)": 3,
+    "Demo Bot Delta (fake)": 1
+   }
+  },
+  {
+   "date": "2026-05-21",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 12,
+    "Demo Bot Beta (fake)": 5,
+    "Demo Team Chat (fake)": 3,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-05-22",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 6,
+    "Demo Bot Beta (fake)": 9,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-05-23",
+   "byBot": {}
+  },
+  {
+   "date": "2026-05-24",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 4,
+    "Demo Bot Beta (fake)": 3
+   }
+  },
+  {
+   "date": "2026-05-25",
+   "byBot": {
+    "Demo Bot Beta (fake)": 1,
+    "Demo Bot Gamma (fake)": 1
+   }
+  },
+  {
+   "date": "2026-05-26",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 17,
+    "Demo Bot Beta (fake)": 7,
+    "Demo Bot Gamma (fake)": 1
+   }
+  },
+  {
+   "date": "2026-05-27",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 15,
+    "Demo Bot Beta (fake)": 1,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 1,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-05-28",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 13,
+    "Demo Bot Beta (fake)": 3,
+    "Demo Bot Gamma (fake)": 3,
+    "Demo Team Chat (fake)": 2
+   }
+  },
+  {
+   "date": "2026-05-29",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 12,
+    "Demo Bot Beta (fake)": 9,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 3,
+    "Demo Alerts Channel (fake)": 2
+   }
+  },
+  {
+   "date": "2026-05-30",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 4,
+    "Demo Bot Beta (fake)": 1,
+    "Demo Bot Gamma (fake)": 1
+   }
+  },
+  {
+   "date": "2026-05-31",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 1
+   }
+  },
+  {
+   "date": "2026-06-01",
+   "byBot": {
+    "Demo Bot Beta (fake)": 4,
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Team Chat (fake)": 3
+   }
+  },
+  {
+   "date": "2026-06-02",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 13,
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-06-03",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 1,
+    "Demo Bot Beta (fake)": 7,
+    "Demo Bot Delta (fake)": 1
+   }
+  },
+  {
+   "date": "2026-06-04",
+   "byBot": {
+    "Demo Bot Beta (fake)": 1,
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 2
+   }
+  },
+  {
+   "date": "2026-06-05",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 9,
+    "Demo Bot Beta (fake)": 1,
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 3,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-06-06",
+   "byBot": {
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-06-07",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 4,
+    "Demo Bot Beta (fake)": 1
+   }
+  },
+  {
+   "date": "2026-06-08",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 11,
+    "Demo Bot Beta (fake)": 4,
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Team Chat (fake)": 1,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-06-09",
+   "byBot": {
+    "Demo Bot Beta (fake)": 4,
+    "Demo Bot Gamma (fake)": 5
+   }
+  },
+  {
+   "date": "2026-06-10",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 12,
+    "Demo Bot Beta (fake)": 8,
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Team Chat (fake)": 2
+   }
+  },
+  {
+   "date": "2026-06-11",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 6,
+    "Demo Bot Beta (fake)": 2,
+    "Demo Bot Gamma (fake)": 8,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 2
+   }
+  },
+  {
+   "date": "2026-06-12",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 14,
+    "Demo Bot Beta (fake)": 9,
+    "Demo Bot Gamma (fake)": 2
+   }
+  },
+  {
+   "date": "2026-06-13",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 4,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-06-14",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 1,
+    "Demo Bot Gamma (fake)": 1
+   }
+  },
+  {
+   "date": "2026-06-15",
+   "byBot": {
+    "Demo Bot Beta (fake)": 3,
+    "Demo Bot Gamma (fake)": 3,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 4
+   }
+  },
+  {
+   "date": "2026-06-16",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 3,
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Team Chat (fake)": 3,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-06-17",
+   "byBot": {}
+  },
+  {
+   "date": "2026-06-18",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 11,
+    "Demo Bot Beta (fake)": 16,
+    "Demo Bot Gamma (fake)": 5,
+    "Demo Bot Delta (fake)": 1
+   }
+  },
+  {
+   "date": "2026-06-19",
+   "byBot": {
+    "Demo Bot Beta (fake)": 6,
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-06-20",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 4,
+    "Demo Bot Gamma (fake)": 1
+   }
+  },
+  {
+   "date": "2026-06-21",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 2
+   }
+  },
+  {
+   "date": "2026-06-22",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 14,
+    "Demo Bot Beta (fake)": 6,
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Team Chat (fake)": 2,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-06-23",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 14,
+    "Demo Bot Beta (fake)": 8,
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-06-24",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 7,
+    "Demo Bot Beta (fake)": 8,
+    "Demo Bot Gamma (fake)": 4,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-06-25",
+   "byBot": {
+    "Demo Bot Beta (fake)": 8,
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Team Chat (fake)": 4
+   }
+  },
+  {
+   "date": "2026-06-26",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 13,
+    "Demo Bot Beta (fake)": 1,
+    "Demo Team Chat (fake)": 4
+   }
+  },
+  {
+   "date": "2026-06-27",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 3
+   }
+  },
+  {
+   "date": "2026-06-28",
+   "byBot": {
+    "Demo Bot Beta (fake)": 2
+   }
+  },
+  {
+   "date": "2026-06-29",
+   "byBot": {
+    "Demo Bot Beta (fake)": 7
+   }
+  },
+  {
+   "date": "2026-06-30",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 6,
+    "Demo Bot Beta (fake)": 4,
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-07-01",
+   "byBot": {
+    "Demo Bot Beta (fake)": 1,
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 2
+   }
+  },
+  {
+   "date": "2026-07-02",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 8,
+    "Demo Bot Gamma (fake)": 3,
+    "Demo Team Chat (fake)": 2
+   }
+  },
+  {
+   "date": "2026-07-03",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 12,
+    "Demo Bot Beta (fake)": 7,
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Team Chat (fake)": 2,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-07-04",
+   "byBot": {
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-07-05",
+   "byBot": {}
+  },
+  {
+   "date": "2026-07-06",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 10,
+    "Demo Bot Gamma (fake)": 3,
+    "Demo Bot Delta (fake)": 1
+   }
+  },
+  {
+   "date": "2026-07-07",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 24,
+    "Demo Bot Gamma (fake)": 5,
+    "Demo Team Chat (fake)": 2,
+    "Demo Alerts Channel (fake)": 2
+   }
+  },
+  {
+   "date": "2026-07-08",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 4,
+    "Demo Bot Beta (fake)": 1,
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 1,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-07-09",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 14,
+    "Demo Bot Beta (fake)": 1,
+    "Demo Bot Delta (fake)": 1
+   }
+  },
+  {
+   "date": "2026-07-10",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 15,
+    "Demo Bot Beta (fake)": 3,
+    "Demo Bot Gamma (fake)": 5
+   }
+  },
+  {
+   "date": "2026-07-11",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 4,
+    "Demo Bot Beta (fake)": 1,
+    "Demo Bot Gamma (fake)": 1
+   }
+  },
+  {
+   "date": "2026-07-12",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 5,
+    "Demo Bot Gamma (fake)": 1
+   }
+  },
+  {
+   "date": "2026-07-13",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 15,
+    "Demo Bot Delta (fake)": 2,
+    "Demo Team Chat (fake)": 1,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-07-14",
+   "byBot": {
+    "Demo Bot Beta (fake)": 6,
+    "Demo Bot Gamma (fake)": 6,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-07-15",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 14,
+    "Demo Bot Beta (fake)": 7,
+    "Demo Bot Gamma (fake)": 4,
+    "Demo Team Chat (fake)": 2
+   }
+  },
+  {
+   "date": "2026-07-16",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 9,
+    "Demo Bot Beta (fake)": 4,
+    "Demo Bot Gamma (fake)": 4,
+    "Demo Bot Delta (fake)": 2,
+    "Demo Team Chat (fake)": 4,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-07-17",
+   "byBot": {
+    "Demo Bot Beta (fake)": 4,
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 3,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-07-18",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 1
+   }
+  },
+  {
+   "date": "2026-07-19",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 7
+   }
+  },
+  {
+   "date": "2026-07-20",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 9,
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-07-21",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 9,
+    "Demo Bot Beta (fake)": 4,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-07-22",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 7,
+    "Demo Bot Beta (fake)": 2,
+    "Demo Bot Gamma (fake)": 3,
+    "Demo Team Chat (fake)": 2,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-07-23",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 9,
+    "Demo Bot Beta (fake)": 10,
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Bot Delta (fake)": 1
+   }
+  },
+  {
+   "date": "2026-07-24",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 24,
+    "Demo Bot Gamma (fake)": 4,
+    "Demo Team Chat (fake)": 2,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-07-25",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 1
+   }
+  },
+  {
+   "date": "2026-07-26",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 1
+   }
+  },
+  {
+   "date": "2026-07-27",
+   "byBot": {
+    "Demo Bot Beta (fake)": 10,
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Team Chat (fake)": 3
+   }
+  },
+  {
+   "date": "2026-07-28",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 14,
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 3
+   }
+  },
+  {
+   "date": "2026-07-29",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 8,
+    "Demo Bot Beta (fake)": 6,
+    "Demo Bot Gamma (fake)": 1
+   }
+  },
+  {
+   "date": "2026-07-30",
+   "byBot": {
+    "Demo Bot Beta (fake)": 4,
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 3
+   }
+  },
+  {
+   "date": "2026-07-31",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 7,
+    "Demo Bot Beta (fake)": 3,
+    "Demo Bot Gamma (fake)": 3,
+    "Demo Team Chat (fake)": 2
+   }
+  },
+  {
+   "date": "2026-08-01",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 1,
+    "Demo Bot Beta (fake)": 1
+   }
+  },
+  {
+   "date": "2026-08-02",
+   "byBot": {
+    "Demo Bot Beta (fake)": 1
+   }
+  },
+  {
+   "date": "2026-08-03",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 12,
+    "Demo Bot Beta (fake)": 10,
+    "Demo Team Chat (fake)": 2
+   }
+  },
+  {
+   "date": "2026-08-04",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 17,
+    "Demo Bot Beta (fake)": 4,
+    "Demo Bot Gamma (fake)": 3,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 2
+   }
+  },
+  {
+   "date": "2026-08-05",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 18,
+    "Demo Bot Beta (fake)": 3,
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Team Chat (fake)": 3
+   }
+  },
+  {
+   "date": "2026-08-06",
+   "byBot": {
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Bot Delta (fake)": 1
+   }
+  },
+  {
+   "date": "2026-08-07",
+   "byBot": {
+    "Demo Bot Beta (fake)": 2,
+    "Demo Team Chat (fake)": 6
+   }
+  },
+  {
+   "date": "2026-08-08",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 8
+   }
+  },
+  {
+   "date": "2026-08-09",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 1,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-08-10",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 17,
+    "Demo Bot Beta (fake)": 8,
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Team Chat (fake)": 1,
+    "Demo Alerts Channel (fake)": 2
+   }
+  },
+  {
+   "date": "2026-08-11",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 15,
+    "Demo Bot Beta (fake)": 5,
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Team Chat (fake)": 3
+   }
+  },
+  {
+   "date": "2026-08-12",
+   "byBot": {
+    "Demo Bot Beta (fake)": 7,
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Team Chat (fake)": 2,
+    "Demo Alerts Channel (fake)": 2
+   }
+  },
+  {
+   "date": "2026-08-13",
+   "byBot": {
+    "Demo Bot Gamma (fake)": 4,
+    "Demo Team Chat (fake)": 2,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-08-14",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 20,
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Team Chat (fake)": 3
+   }
+  },
+  {
+   "date": "2026-08-15",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 3,
+    "Demo Bot Beta (fake)": 2
+   }
+  },
+  {
+   "date": "2026-08-16",
+   "byBot": {
+    "Demo Bot Beta (fake)": 2
+   }
+  },
+  {
+   "date": "2026-08-17",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 12,
+    "Demo Bot Beta (fake)": 7,
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 1,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-08-18",
+   "byBot": {
+    "Demo Bot Beta (fake)": 2,
+    "Demo Bot Gamma (fake)": 6,
+    "Demo Bot Delta (fake)": 1
+   }
+  },
+  {
+   "date": "2026-08-19",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 2,
+    "Demo Bot Beta (fake)": 14,
+    "Demo Bot Gamma (fake)": 1
+   }
+  },
+  {
+   "date": "2026-08-20",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 15,
+    "Demo Bot Beta (fake)": 3,
+    "Demo Bot Gamma (fake)": 5,
+    "Demo Team Chat (fake)": 4,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-08-21",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 7,
+    "Demo Bot Beta (fake)": 6,
+    "Demo Bot Gamma (fake)": 6,
+    "Demo Team Chat (fake)": 2
+   }
+  },
+  {
+   "date": "2026-08-22",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 3,
+    "Demo Bot Beta (fake)": 1
+   }
+  },
+  {
+   "date": "2026-08-23",
+   "byBot": {
+    "Demo Bot Beta (fake)": 1,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-08-24",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 12,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 2
+   }
+  },
+  {
+   "date": "2026-08-25",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 2,
+    "Demo Bot Delta (fake)": 2,
+    "Demo Team Chat (fake)": 2
+   }
+  },
+  {
+   "date": "2026-08-26",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 18,
+    "Demo Bot Beta (fake)": 4,
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 2,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-08-27",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 17,
+    "Demo Bot Beta (fake)": 12,
+    "Demo Bot Gamma (fake)": 9,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-08-28",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 3,
+    "Demo Bot Beta (fake)": 5,
+    "Demo Bot Gamma (fake)": 5,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-08-29",
+   "byBot": {
+    "Demo Bot Gamma (fake)": 1
+   }
+  },
+  {
+   "date": "2026-08-30",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 4
+   }
+  },
+  {
+   "date": "2026-08-31",
+   "byBot": {
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Bot Delta (fake)": 1
+   }
+  },
+  {
+   "date": "2026-09-01",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 21,
+    "Demo Bot Beta (fake)": 5,
+    "Demo Bot Gamma (fake)": 3,
+    "Demo Bot Delta (fake)": 2,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-09-02",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 2,
+    "Demo Bot Gamma (fake)": 4,
+    "Demo Bot Delta (fake)": 2,
+    "Demo Team Chat (fake)": 4
+   }
+  },
+  {
+   "date": "2026-09-03",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 2,
+    "Demo Bot Beta (fake)": 6,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 3
+   }
+  },
+  {
+   "date": "2026-09-04",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 35,
+    "Demo Bot Beta (fake)": 9,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-09-05",
+   "byBot": {
+    "Demo Bot Gamma (fake)": 1
+   }
+  },
+  {
+   "date": "2026-09-06",
+   "byBot": {
+    "Demo Bot Beta (fake)": 1
+   }
+  },
+  {
+   "date": "2026-09-07",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 1,
+    "Demo Bot Beta (fake)": 6,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-09-08",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 18,
+    "Demo Bot Beta (fake)": 6
+   }
+  },
+  {
+   "date": "2026-09-09",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 29,
+    "Demo Bot Beta (fake)": 5,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-09-10",
+   "byBot": {
+    "Demo Bot Beta (fake)": 7,
+    "Demo Bot Gamma (fake)": 4,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-09-11",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 9,
+    "Demo Bot Beta (fake)": 4,
+    "Demo Bot Gamma (fake)": 4,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 4
+   }
+  },
+  {
+   "date": "2026-09-12",
+   "byBot": {
+    "Demo Bot Beta (fake)": 1
+   }
+  },
+  {
+   "date": "2026-09-13",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 3,
+    "Demo Bot Beta (fake)": 1,
+    "Demo Bot Gamma (fake)": 1
+   }
+  },
+  {
+   "date": "2026-09-14",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 12,
+    "Demo Bot Beta (fake)": 6,
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 2,
+    "Demo Alerts Channel (fake)": 2
+   }
+  },
+  {
+   "date": "2026-09-15",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 9,
+    "Demo Bot Beta (fake)": 12,
+    "Demo Bot Gamma (fake)": 3,
+    "Demo Team Chat (fake)": 2,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-09-16",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 9,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-09-17",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 10,
+    "Demo Bot Gamma (fake)": 3,
+    "Demo Bot Delta (fake)": 1
+   }
+  },
+  {
+   "date": "2026-09-18",
+   "byBot": {
+    "Demo Bot Beta (fake)": 14,
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-09-19",
+   "byBot": {}
+  },
+  {
+   "date": "2026-09-20",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 3
+   }
+  },
+  {
+   "date": "2026-09-21",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 18,
+    "Demo Bot Beta (fake)": 4,
+    "Demo Bot Gamma (fake)": 5,
+    "Demo Team Chat (fake)": 2,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-09-22",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 19,
+    "Demo Team Chat (fake)": 2
+   }
+  },
+  {
+   "date": "2026-09-23",
+   "byBot": {
+    "Demo Bot Gamma (fake)": 5,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 2,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-09-24",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 29,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-09-25",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 25,
+    "Demo Bot Beta (fake)": 3,
+    "Demo Bot Gamma (fake)": 4,
+    "Demo Bot Delta (fake)": 2,
+    "Demo Team Chat (fake)": 2,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-09-26",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 7,
+    "Demo Bot Beta (fake)": 3
+   }
+  },
+  {
+   "date": "2026-09-27",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 6,
+    "Demo Bot Gamma (fake)": 1,
+    "Demo Team Chat (fake)": 1
+   }
+  },
+  {
+   "date": "2026-09-28",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 2,
+    "Demo Bot Beta (fake)": 5,
+    "Demo Bot Gamma (fake)": 6,
+    "Demo Team Chat (fake)": 3,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-09-29",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 6,
+    "Demo Bot Beta (fake)": 3,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 3,
+    "Demo Alerts Channel (fake)": 2
+   }
+  },
+  {
+   "date": "2026-09-30",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 10,
+    "Demo Bot Beta (fake)": 8,
+    "Demo Bot Gamma (fake)": 3,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-10-01",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 21,
+    "Demo Bot Beta (fake)": 12,
+    "Demo Bot Gamma (fake)": 7,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Team Chat (fake)": 2
+   }
+  },
+  {
+   "date": "2026-10-02",
+   "byBot": {
+    "Demo Bot Beta (fake)": 10,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-10-03",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 4,
+    "Demo Bot Beta (fake)": 1
+   }
+  },
+  {
+   "date": "2026-10-04",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 2
+   }
+  },
+  {
+   "date": "2026-10-05",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 16,
+    "Demo Bot Beta (fake)": 7,
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-10-06",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 21,
+    "Demo Bot Gamma (fake)": 2
+   }
+  },
+  {
+   "date": "2026-10-07",
+   "byBot": {
+    "Demo Bot Beta (fake)": 1,
+    "Demo Bot Gamma (fake)": 3
+   }
+  },
+  {
+   "date": "2026-10-08",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 9,
+    "Demo Bot Beta (fake)": 12,
+    "Demo Bot Gamma (fake)": 6,
+    "Demo Bot Delta (fake)": 1,
+    "Demo Alerts Channel (fake)": 1
+   }
+  },
+  {
+   "date": "2026-10-09",
+   "byBot": {
+    "Demo Bot Beta (fake)": 10
+   }
+  },
+  {
+   "date": "2026-10-10",
+   "byBot": {}
+  },
+  {
+   "date": "2026-10-11",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 8
+   }
+  },
+  {
+   "date": "2026-10-12",
+   "byBot": {
+    "Demo Bot Alpha (fake)": 20,
+    "Demo Bot Beta (fake)": 12,
+    "Demo Bot Gamma (fake)": 2,
+    "Demo Bot Delta (fake)": 2,
+    "Demo Team Chat (fake)": 5
+   }
+  }
+ ]
+}
