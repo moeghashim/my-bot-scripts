@@ -11,6 +11,13 @@ Most scripts assume they run on a Grok Bot box (a Linux machine with `/workspace
 
 ![Work Grok Bot chart](bot-army-work.png)
 
+## Bot descriptions
+
+Copy-pasteable Grok Bot descriptions and routines for the bots behind two of these projects:
+
+- [PORTAL.md](PORTAL.md): Portal, a switchboard bot that relays messages between two sets of bots through a Notion "Bot Portal" (pairs with [`bot-portal/`](bot-portal/))
+- [TEXTS.md](TEXTS.md): Texts, an iMessage inbox bot that routes your texts to your other bots (pairs with [`texts-relay/`](texts-relay/))
+
 ## Projects
 
 | Folder | What it does | Runtime |
