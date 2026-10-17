@@ -16,6 +16,7 @@ Most scripts assume they run on a Grok Bot box (a Linux machine with `/workspace
 | [`bill-email-scan/`](bill-email-scan/) | Classifies bill and card emails for high balances, late payments, scams and prompt injection, and tracks due dates | Python 3, TypeSafe Jev API |
 | [`msg-graph/`](msg-graph/) | GitHub-style heatmap of how many messages you send each bot, built from a Grok Bot box's search index | Python 3 + static HTML |
 | [`usage-tabs/`](usage-tabs/) | Opens the Cursor, Claude, Codex and Grok usage dashboards in a new Chrome window | bash |
+| [`work-app-clones/`](work-app-clones/) | Builds blue "Work" copies of Claude, ChatGPT/Codex and Grok Bot with isolated profiles, so work and personal accounts run side by side | bash + JXA |
 | [`bot-avatars/`](bot-avatars/) | Sticker-style bot avatar PNGs | – |
 
 ## Configuration
