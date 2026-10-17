@@ -53,8 +53,7 @@
   main { max-width: 1160px; margin: 0 auto; padding: 32px 16px 56px; }
 
   /* header */
-  .head { display: flex; gap: 16px 24px; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; margin-bottom: 20px; }
-  .eyebrow { font-size: 12px; font-weight: 500; color: var(--text-3); letter-spacing: .02em; }
+  .head { display: flex; gap: 16px 24px; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 20px; }
   h1 { font-size: 24px; line-height: 1.2; letter-spacing: -.02em; font-weight: 650; margin: 2px 0 0; }
   .controls { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
 
@@ -116,8 +115,8 @@
 
   /* bot list */
   .list-card { display: flex; flex-direction: column; }
-  .list-wrap { flex: 1 1 auto; min-height: 280px; overflow-y: auto; contain: size; margin: 0 -10px -8px; padding: 0 4px 4px; }
-  @media (max-width: 900px) { .list-wrap { contain: none; max-height: 520px; } }
+  .list-wrap { flex: 1 1 auto; max-height: 440px; overflow-y: auto; margin: 0 -10px -8px; padding: 0 4px 4px; }
+  @media (max-width: 900px) { .list-wrap { max-height: 520px; } }
   .bots { list-style: none; margin: 0; padding: 0; }
   .bot-row { width: 100%; display: grid; grid-template-columns: 18px 24px minmax(0, 1fr) auto; gap: 10px; align-items: center; border: 0;
     background: transparent; border-radius: 9px; padding: 7px 8px; text-align: left; cursor: pointer; transition: background .15s, opacity .2s; }
@@ -148,9 +147,10 @@
   .av .corner { position: absolute; right: -3px; bottom: -3px; width: 11px; height: 11px; border-radius: 50%; background: var(--surface);
     display: grid; place-items: center; color: var(--text-2); box-shadow: 0 0 0 1px var(--border); }
   .av .corner svg { width: 7px; height: 7px; }
-  .av-stack { display: inline-flex; flex: none; }
-  .av-stack .av + .av { margin-left: -40%; }
-  .av-stack .av { box-shadow: 0 0 0 1.5px var(--surface); }
+  /* group of member avatars: a cluster inside the same square footprint as one avatar */
+  .av-stack { position: relative; flex: none; display: inline-block; border-radius: 50%; background: var(--surface-2); box-shadow: inset 0 0 0 1px var(--border); }
+  .av-stack > .av { position: absolute; box-shadow: 0 0 0 1.5px var(--surface); }
+  .av-stack.ring::after { content: ""; position: absolute; inset: -2px; border-radius: 50%; box-shadow: 0 0 0 1.5px var(--ring); pointer-events: none; }
 
   /* tooltip */
   .tip { position: fixed; z-index: 30; pointer-events: none; width: 260px; background: var(--surface); color: var(--text); border-radius: 12px;
@@ -178,8 +178,6 @@
     background: var(--surface); font-size: 12px; font-weight: 500; cursor: pointer; color: var(--text); transition: border-color .15s; }
   .chip:hover { border-color: var(--border-strong); }
   .chip .x { color: var(--text-3); font-size: 14px; line-height: 1; padding: 0 2px; }
-  .foot { margin-top: 20px; font-size: 12px; color: var(--text-3); display: grid; gap: 4px; }
-  .foot > div { display: flex; gap: 6px; align-items: flex-start; }
   .err { color: #d6336c; font-size: 12px; margin: -8px 0 16px; }
   .empty-state { text-align: center; padding: 56px 16px; }
   .empty-state h2 { font-size: 16px; margin: 0 0 6px; }
@@ -337,12 +335,17 @@ const ICONS = {
 
 // Bots: round photo, or a colored initial. Groups/channels: rounded tile with a glyph (or the
 // photo plus a corner glyph); with config `members`, a stack of member avatars instead.
-function Avatar({ bot, size = 24, ring }) {
+function Avatar({ bot, size = 24, ring, style, bare }) {
   const url = useAvatar(bot.name);
   const members = bot.kind !== "bot" && Array.isArray(bot.members) && bot.members.length ? bot.members.slice(0, 3) : null;
   if (members) {
-    return html`<span class="av-stack" title=${`${bot.name} · ${members.join(", ")}`}>
-      ${members.map(m => html`<${Avatar} key=${m} bot=${{ name: m, kind: "bot" }} size=${Math.round(size * 0.8)} />`)}
+    // 2 members: diagonal pair; 3: triangle. Positions are fractions of the footprint.
+    const layout = members.length === 1 ? [[0.5, 0.5]] : members.length === 2 ? [[0.37, 0.37], [0.63, 0.63]] : [[0.5, 0.32], [0.31, 0.65], [0.69, 0.65]];
+    const d = size * (members.length === 1 ? 0.8 : members.length === 2 ? 0.56 : 0.48);
+    return html`<span class=${`av-stack${ring ? " ring" : ""}`} style=${{ width: size, height: size, "--ring": ring || "transparent" }}
+        title=${`${bot.name} · ${members.join(", ")}`} aria-hidden="true">
+      ${members.map((m, i) => html`<${Avatar} key=${m} bot=${{ name: m, kind: "bot" }} size=${d} bare=${d < 14}
+        style=${{ left: layout[i][0] * size - d / 2, top: layout[i][1] * size - d / 2, zIndex: members.length - i }} />`)}
     </span>`;
   }
   const hue = INITIAL_HUES[hash(bot.name) % INITIAL_HUES.length];
@@ -352,8 +355,8 @@ function Avatar({ bot, size = 24, ring }) {
   if (url) inner = html`<img src=${url} alt="" decoding="async" />`;
   else if (isTile) inner = html`<span class="ini" style=${{ background: `color-mix(in oklab, ${fill} 22%, var(--surface-2))`, color: fill }}>
       <span style=${{ width: size * 0.58, height: size * 0.58, display: "grid" }}>${ICONS[bot.kind] || ICONS.group}</span></span>`;
-  else inner = html`<span class="ini" style=${{ background: fill, fontSize: size * 0.46 }}>${(bot.name.match(/[a-z0-9]/i) || ["?"])[0].toUpperCase()}</span>`;
-  return html`<span class=${`av${isTile ? " tile" : ""}${ring ? " ring" : ""}`} style=${{ width: size, height: size, "--ring": ring || "transparent" }} aria-hidden="true">
+  else inner = html`<span class="ini" style=${{ background: fill, fontSize: size * 0.46 }}>${bare ? "" : (bot.name.match(/[a-z0-9]/i) || ["?"])[0].toUpperCase()}</span>`;
+  return html`<span class=${`av${isTile ? " tile" : ""}${ring ? " ring" : ""}`} style=${{ width: size, height: size, "--ring": ring || "transparent", ...style }} aria-hidden="true">
     ${inner}
     ${url && isTile && html`<span class="corner">${ICONS[bot.kind] || ICONS.group}</span>`}
   </span>`;
@@ -797,8 +800,7 @@ function App() {
   return html`<main>
     <header class="head">
       <div>
-        <div class="eyebrow">Grok Bot${data ? "" : " · No data"}</div>
-        <h1>Messages sent</h1>
+        <h1 title=${data ? `${data.sources.join(", ")}${data.generatedAt ? ` · generated ${fmtGen(data.generatedAt)}` : ""}${data.timezone ? ` · ${data.timezone}` : ""}` : ""}>Grok Bot messages</h1>
       </div>
       <div class="controls">
         <div class="seg" role="group" aria-label="Kind">
@@ -850,10 +852,6 @@ function App() {
       </div>
     </div>`}
 
-    <footer class="foot">
-      <div>${status}</div>
-      ${data && html`<div><span style=${{ flex: "1 1 0", minWidth: 0 }}>${data.sources.join(", ")}${data.generatedAt ? ` · generated ${fmtGen(data.generatedAt)}` : ""}${data.timezone ? ` · ${data.timezone}` : ""}</span></div>`}
-    </footer>
     <${Tooltip} tip=${tip} />
     ${dragging && html`<div class="drop">Drop JSON files to load</div>`}
   </main>`;

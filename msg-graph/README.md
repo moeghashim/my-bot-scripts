@@ -4,6 +4,10 @@ Local viewer for how many messages you send to your Grok Bot assistants. It show
 
 Single `index.html`, React + htm from a CDN, no build step.
 
+![msg-graph showing fake sample data: stats, daily heatmap, weekday rhythm, weekly stacked bars and a ranking by bot](screenshot.png)
+
+*Fake sample data (`data/sample.json`).*
+
 ## Set this up with your Grok Bot
 
 *For a bot reading this on the user's behalf.*

@@ -31,6 +31,7 @@ msg-graph/config.json
 msg-graph/avatars/*
 !msg-graph/avatars/.gitkeep
 msg-graph/screenshot*.png
+!msg-graph/screenshot.png
 
 # Media, logs, runtime
 videos/
