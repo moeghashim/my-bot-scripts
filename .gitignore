@@ -16,6 +16,7 @@ pull.url
 # Local data (only fake samples are committed)
 **/data/*
 !**/data/sample-*.json
+!**/data/sample.json
 progress_*.json
 candidates.json
 saved_candidates.json
@@ -27,7 +28,8 @@ seen.json
 last-inbound.json
 health-state.json
 msg-graph/config.json
-msg-graph/avatars/
+msg-graph/avatars/*
+!msg-graph/avatars/.gitkeep
 msg-graph/screenshot*.png
 
 # Media, logs, runtime

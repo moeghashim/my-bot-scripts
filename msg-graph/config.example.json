@@ -1,5 +1,5 @@
 {
-  "_doc": "Copy to config.json (gitignored). Kind overrides for entries that aren't 1:1 bots. Keys are bot ids (preferred) or exact names. kind: bot | group | channel. Optional members: [names] renders stacked avatars. Read by index.html and by export_grokbot_messages.py (--config).",
+  "_doc": "Copy to data/config.json (gitignored). Kind overrides for entries that aren't 1:1 bots. Keys are bot ids (preferred) or exact names. kind: bot | group | channel. Optional members: [names] renders stacked avatars. Read by index.html.",
   "kinds": {
     "00000000-0000-4000-8000-000000000001": {
       "kind": "group",

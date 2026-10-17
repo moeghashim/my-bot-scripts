@@ -30,7 +30,7 @@ Secrets and personal values never live in the code. Each project reads them from
 | `saved-tweets` | `NOTION_API_TOKEN` (or `NOTION_ENV_FILE`), `SAVED_TWEETS_SKIP_PAGES` |
 | `capture-digest` | `DIGEST_IN`, `DIGEST_OUT` |
 | `bill-email-scan` | `JEV_API_KEY` (or `JEV_API_KEY_FILE` / `--key-file`) |
-| `msg-graph` | `MSG_GRAPH_TZ`; optional `config.json` (copy `config.example.json`) |
+| `msg-graph` | `MSG_GRAPH_TZ`; optional `data/config.json` (copy `config.example.json`) |
 
 See each folder's README for setup steps.
 

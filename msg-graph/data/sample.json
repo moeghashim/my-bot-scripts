@@ -1,0 +1,1407 @@
+{
+ "generatedAt": "2026-10-13T09:00:00-07:00",
+ "timezone": "America/Los_Angeles",
+ "_note": "FAKE sample data for testing msg-graph. Not real usage.",
+ "bots": {
+  "sample-coder": {
+   "name": "Coder"
+  },
+  "sample-writer": {
+   "name": "Writer"
+  },
+  "sample-helper": {
+   "name": "Helper"
+  },
+  "sample-planner": {
+   "name": "Planner"
+  },
+  "sample-researcher": {
+   "name": "Researcher"
+  },
+  "sample-team": {
+   "name": "Team chat",
+   "kind": "group",
+   "members": [
+    "Coder",
+    "Writer",
+    "Helper"
+   ]
+  }
+ },
+ "days": [
+  {
+   "date": "2026-04-13",
+   "byBot": {
+    "Coder": 1,
+    "Team chat": 1,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-04-14",
+   "byBot": {
+    "Coder": 1,
+    "Helper": 1,
+    "Team chat": 1
+   }
+  },
+  {
+   "date": "2026-04-15",
+   "byBot": {
+    "Coder": 1,
+    "Helper": 1,
+    "Planner": 2,
+    "Researcher": 1,
+    "Team chat": 1
+   }
+  },
+  {
+   "date": "2026-04-16",
+   "byBot": {
+    "Coder": 4,
+    "Helper": 4,
+    "Planner": 1
+   }
+  },
+  {
+   "date": "2026-04-17",
+   "byBot": {
+    "Planner": 1,
+    "Researcher": 1,
+    "Team chat": 1
+   }
+  },
+  {
+   "date": "2026-04-18",
+   "byBot": {
+    "Coder": 1
+   }
+  },
+  {
+   "date": "2026-04-19",
+   "byBot": {
+    "Helper": 1,
+    "Planner": 1
+   }
+  },
+  {
+   "date": "2026-04-20",
+   "byBot": {
+    "Coder": 3,
+    "Planner": 1,
+    "Researcher": 1,
+    "Team chat": 2
+   }
+  },
+  {
+   "date": "2026-04-21",
+   "byBot": {
+    "Helper": 3,
+    "Researcher": 1,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-04-22",
+   "byBot": {
+    "Coder": 2,
+    "Helper": 1,
+    "Team chat": 1
+   }
+  },
+  {
+   "date": "2026-04-23",
+   "byBot": {
+    "Coder": 3,
+    "Helper": 1,
+    "Planner": 4
+   }
+  },
+  {
+   "date": "2026-04-24",
+   "byBot": {
+    "Helper": 1,
+    "Planner": 1,
+    "Researcher": 1,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-04-25",
+   "byBot": {
+    "Helper": 1,
+    "Planner": 1
+   }
+  },
+  {
+   "date": "2026-04-26",
+   "byBot": {
+    "Helper": 1
+   }
+  },
+  {
+   "date": "2026-04-27",
+   "byBot": {
+    "Coder": 1,
+    "Researcher": 1,
+    "Writer": 2
+   }
+  },
+  {
+   "date": "2026-04-28",
+   "byBot": {
+    "Helper": 2,
+    "Researcher": 1,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-04-29",
+   "byBot": {
+    "Coder": 6,
+    "Helper": 2,
+    "Planner": 1,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-04-30",
+   "byBot": {
+    "Coder": 2,
+    "Helper": 1,
+    "Planner": 1,
+    "Researcher": 1,
+    "Team chat": 2,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-05-01",
+   "byBot": {
+    "Helper": 1,
+    "Planner": 2,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-05-02",
+   "byBot": {
+    "Helper": 1
+   }
+  },
+  {
+   "date": "2026-05-03",
+   "byBot": {
+    "Planner": 1
+   }
+  },
+  {
+   "date": "2026-05-04",
+   "byBot": {
+    "Coder": 1,
+    "Helper": 1,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-05-05",
+   "byBot": {
+    "Coder": 1
+   }
+  },
+  {
+   "date": "2026-05-06",
+   "byBot": {
+    "Coder": 2,
+    "Helper": 1,
+    "Researcher": 1,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-05-07",
+   "byBot": {
+    "Coder": 9,
+    "Helper": 2,
+    "Planner": 1
+   }
+  },
+  {
+   "date": "2026-05-08",
+   "byBot": {
+    "Coder": 4,
+    "Helper": 3,
+    "Planner": 2,
+    "Researcher": 1,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-05-09",
+   "byBot": {
+    "Helper": 1
+   }
+  },
+  {
+   "date": "2026-05-10",
+   "byBot": {}
+  },
+  {
+   "date": "2026-05-11",
+   "byBot": {
+    "Coder": 1,
+    "Helper": 1,
+    "Researcher": 1
+   }
+  },
+  {
+   "date": "2026-05-12",
+   "byBot": {
+    "Helper": 4,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-05-13",
+   "byBot": {
+    "Coder": 5,
+    "Helper": 7,
+    "Researcher": 2,
+    "Team chat": 1
+   }
+  },
+  {
+   "date": "2026-05-14",
+   "byBot": {
+    "Helper": 1,
+    "Planner": 1,
+    "Team chat": 1,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-05-15",
+   "byBot": {
+    "Coder": 2,
+    "Planner": 1,
+    "Researcher": 1
+   }
+  },
+  {
+   "date": "2026-05-16",
+   "byBot": {
+    "Team chat": 1
+   }
+  },
+  {
+   "date": "2026-05-17",
+   "byBot": {}
+  },
+  {
+   "date": "2026-05-18",
+   "byBot": {
+    "Coder": 1,
+    "Team chat": 1
+   }
+  },
+  {
+   "date": "2026-05-19",
+   "byBot": {
+    "Coder": 5,
+    "Helper": 2,
+    "Planner": 2
+   }
+  },
+  {
+   "date": "2026-05-20",
+   "byBot": {
+    "Coder": 7,
+    "Helper": 4,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-05-21",
+   "byBot": {
+    "Coder": 5,
+    "Planner": 1,
+    "Writer": 2
+   }
+  },
+  {
+   "date": "2026-05-22",
+   "byBot": {
+    "Coder": 1,
+    "Helper": 3,
+    "Researcher": 1,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-05-23",
+   "byBot": {
+    "Planner": 1
+   }
+  },
+  {
+   "date": "2026-05-24",
+   "byBot": {
+    "Coder": 1
+   }
+  },
+  {
+   "date": "2026-05-25",
+   "byBot": {
+    "Coder": 3,
+    "Helper": 4,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-05-26",
+   "byBot": {
+    "Coder": 1,
+    "Helper": 1,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-05-27",
+   "byBot": {
+    "Coder": 2,
+    "Helper": 1,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-05-28",
+   "byBot": {
+    "Coder": 1,
+    "Helper": 1
+   }
+  },
+  {
+   "date": "2026-05-29",
+   "byBot": {
+    "Coder": 2,
+    "Researcher": 1,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-05-30",
+   "byBot": {}
+  },
+  {
+   "date": "2026-05-31",
+   "byBot": {
+    "Coder": 1,
+    "Researcher": 1
+   }
+  },
+  {
+   "date": "2026-06-01",
+   "byBot": {
+    "Coder": 4,
+    "Helper": 1,
+    "Team chat": 1,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-06-02",
+   "byBot": {
+    "Coder": 11,
+    "Helper": 1
+   }
+  },
+  {
+   "date": "2026-06-03",
+   "byBot": {
+    "Coder": 15
+   }
+  },
+  {
+   "date": "2026-06-04",
+   "byBot": {
+    "Coder": 6,
+    "Team chat": 1
+   }
+  },
+  {
+   "date": "2026-06-05",
+   "byBot": {
+    "Coder": 5,
+    "Helper": 1,
+    "Planner": 1,
+    "Researcher": 1
+   }
+  },
+  {
+   "date": "2026-06-06",
+   "byBot": {
+    "Coder": 1,
+    "Planner": 1
+   }
+  },
+  {
+   "date": "2026-06-07",
+   "byBot": {
+    "Coder": 1
+   }
+  },
+  {
+   "date": "2026-06-08",
+   "byBot": {
+    "Coder": 1,
+    "Writer": 2
+   }
+  },
+  {
+   "date": "2026-06-09",
+   "byBot": {
+    "Coder": 3,
+    "Helper": 1,
+    "Planner": 1,
+    "Team chat": 1,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-06-10",
+   "byBot": {
+    "Coder": 3,
+    "Helper": 1,
+    "Researcher": 1,
+    "Team chat": 1,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-06-11",
+   "byBot": {
+    "Coder": 1,
+    "Helper": 2,
+    "Researcher": 1,
+    "Team chat": 1
+   }
+  },
+  {
+   "date": "2026-06-12",
+   "byBot": {
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-06-13",
+   "byBot": {
+    "Coder": 1,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-06-14",
+   "byBot": {
+    "Planner": 1,
+    "Team chat": 1,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-06-15",
+   "byBot": {
+    "Coder": 4,
+    "Helper": 2,
+    "Planner": 1,
+    "Team chat": 1
+   }
+  },
+  {
+   "date": "2026-06-16",
+   "byBot": {
+    "Helper": 8,
+    "Researcher": 1
+   }
+  },
+  {
+   "date": "2026-06-17",
+   "byBot": {
+    "Coder": 2,
+    "Planner": 3
+   }
+  },
+  {
+   "date": "2026-06-18",
+   "byBot": {
+    "Coder": 2,
+    "Planner": 2
+   }
+  },
+  {
+   "date": "2026-06-19",
+   "byBot": {
+    "Coder": 5,
+    "Planner": 2,
+    "Researcher": 1,
+    "Writer": 2
+   }
+  },
+  {
+   "date": "2026-06-20",
+   "byBot": {
+    "Coder": 1,
+    "Helper": 1
+   }
+  },
+  {
+   "date": "2026-06-21",
+   "byBot": {
+    "Helper": 3,
+    "Planner": 1
+   }
+  },
+  {
+   "date": "2026-06-22",
+   "byBot": {
+    "Coder": 4,
+    "Helper": 1,
+    "Researcher": 1,
+    "Writer": 2
+   }
+  },
+  {
+   "date": "2026-06-23",
+   "byBot": {
+    "Coder": 2,
+    "Helper": 2,
+    "Planner": 1,
+    "Researcher": 1,
+    "Team chat": 1
+   }
+  },
+  {
+   "date": "2026-06-24",
+   "byBot": {
+    "Coder": 1,
+    "Team chat": 1,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-06-25",
+   "byBot": {
+    "Coder": 1,
+    "Helper": 1,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-06-26",
+   "byBot": {
+    "Coder": 8,
+    "Helper": 1,
+    "Researcher": 1,
+    "Writer": 3
+   }
+  },
+  {
+   "date": "2026-06-27",
+   "byBot": {
+    "Planner": 1,
+    "Researcher": 1
+   }
+  },
+  {
+   "date": "2026-06-28",
+   "byBot": {
+    "Coder": 9,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-06-29",
+   "byBot": {
+    "Coder": 2,
+    "Planner": 1
+   }
+  },
+  {
+   "date": "2026-06-30",
+   "byBot": {
+    "Helper": 1,
+    "Planner": 1,
+    "Researcher": 1,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-07-01",
+   "byBot": {
+    "Coder": 1
+   }
+  },
+  {
+   "date": "2026-07-02",
+   "byBot": {
+    "Coder": 4
+   }
+  },
+  {
+   "date": "2026-07-03",
+   "byBot": {
+    "Helper": 1,
+    "Planner": 1,
+    "Team chat": 1
+   }
+  },
+  {
+   "date": "2026-07-04",
+   "byBot": {
+    "Team chat": 1
+   }
+  },
+  {
+   "date": "2026-07-05",
+   "byBot": {
+    "Helper": 1
+   }
+  },
+  {
+   "date": "2026-07-06",
+   "byBot": {
+    "Helper": 1,
+    "Planner": 1
+   }
+  },
+  {
+   "date": "2026-07-07",
+   "byBot": {
+    "Helper": 1,
+    "Planner": 1,
+    "Researcher": 2,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-07-08",
+   "byBot": {
+    "Coder": 5,
+    "Writer": 4
+   }
+  },
+  {
+   "date": "2026-07-09",
+   "byBot": {
+    "Coder": 14,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-07-10",
+   "byBot": {
+    "Coder": 2,
+    "Helper": 3,
+    "Planner": 1
+   }
+  },
+  {
+   "date": "2026-07-11",
+   "byBot": {
+    "Writer": 2
+   }
+  },
+  {
+   "date": "2026-07-12",
+   "byBot": {
+    "Researcher": 1,
+    "Writer": 3
+   }
+  },
+  {
+   "date": "2026-07-13",
+   "byBot": {
+    "Coder": 3,
+    "Planner": 1,
+    "Writer": 3
+   }
+  },
+  {
+   "date": "2026-07-14",
+   "byBot": {
+    "Coder": 9,
+    "Helper": 3
+   }
+  },
+  {
+   "date": "2026-07-15",
+   "byBot": {
+    "Coder": 1,
+    "Researcher": 1,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-07-16",
+   "byBot": {
+    "Coder": 3,
+    "Helper": 3,
+    "Researcher": 2,
+    "Team chat": 1,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-07-17",
+   "byBot": {
+    "Coder": 7,
+    "Team chat": 1,
+    "Writer": 2
+   }
+  },
+  {
+   "date": "2026-07-18",
+   "byBot": {}
+  },
+  {
+   "date": "2026-07-19",
+   "byBot": {
+    "Planner": 1
+   }
+  },
+  {
+   "date": "2026-07-20",
+   "byBot": {
+    "Coder": 5
+   }
+  },
+  {
+   "date": "2026-07-21",
+   "byBot": {
+    "Coder": 6,
+    "Helper": 1
+   }
+  },
+  {
+   "date": "2026-07-22",
+   "byBot": {
+    "Coder": 2,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-07-23",
+   "byBot": {
+    "Coder": 7,
+    "Helper": 2,
+    "Team chat": 1,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-07-24",
+   "byBot": {
+    "Helper": 5,
+    "Planner": 1,
+    "Researcher": 1,
+    "Team chat": 2
+   }
+  },
+  {
+   "date": "2026-07-25",
+   "byBot": {
+    "Helper": 1
+   }
+  },
+  {
+   "date": "2026-07-26",
+   "byBot": {}
+  },
+  {
+   "date": "2026-07-27",
+   "byBot": {
+    "Coder": 4,
+    "Planner": 4,
+    "Team chat": 1
+   }
+  },
+  {
+   "date": "2026-07-28",
+   "byBot": {
+    "Coder": 6,
+    "Helper": 5,
+    "Planner": 2,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-07-29",
+   "byBot": {
+    "Coder": 4
+   }
+  },
+  {
+   "date": "2026-07-30",
+   "byBot": {
+    "Helper": 1,
+    "Team chat": 1
+   }
+  },
+  {
+   "date": "2026-07-31",
+   "byBot": {
+    "Coder": 1,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-08-01",
+   "byBot": {
+    "Coder": 4,
+    "Team chat": 2
+   }
+  },
+  {
+   "date": "2026-08-02",
+   "byBot": {
+    "Coder": 7
+   }
+  },
+  {
+   "date": "2026-08-03",
+   "byBot": {
+    "Coder": 7,
+    "Helper": 3,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-08-04",
+   "byBot": {
+    "Helper": 5,
+    "Team chat": 1,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-08-05",
+   "byBot": {
+    "Coder": 11,
+    "Helper": 7,
+    "Planner": 1,
+    "Researcher": 3,
+    "Team chat": 1,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-08-06",
+   "byBot": {
+    "Coder": 6,
+    "Helper": 3,
+    "Planner": 1,
+    "Researcher": 1
+   }
+  },
+  {
+   "date": "2026-08-07",
+   "byBot": {
+    "Helper": 7,
+    "Researcher": 2,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-08-08",
+   "byBot": {
+    "Researcher": 1
+   }
+  },
+  {
+   "date": "2026-08-09",
+   "byBot": {
+    "Planner": 1,
+    "Team chat": 1
+   }
+  },
+  {
+   "date": "2026-08-10",
+   "byBot": {
+    "Coder": 7,
+    "Planner": 1,
+    "Team chat": 2,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-08-11",
+   "byBot": {
+    "Coder": 1,
+    "Helper": 1,
+    "Planner": 2,
+    "Researcher": 1,
+    "Team chat": 1,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-08-12",
+   "byBot": {
+    "Coder": 4,
+    "Helper": 4,
+    "Researcher": 1
+   }
+  },
+  {
+   "date": "2026-08-13",
+   "byBot": {
+    "Coder": 7,
+    "Helper": 1,
+    "Researcher": 1
+   }
+  },
+  {
+   "date": "2026-08-14",
+   "byBot": {
+    "Coder": 3,
+    "Helper": 1,
+    "Researcher": 1
+   }
+  },
+  {
+   "date": "2026-08-15",
+   "byBot": {}
+  },
+  {
+   "date": "2026-08-16",
+   "byBot": {
+    "Coder": 3
+   }
+  },
+  {
+   "date": "2026-08-17",
+   "byBot": {
+    "Coder": 1,
+    "Helper": 1,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-08-18",
+   "byBot": {
+    "Coder": 13,
+    "Helper": 1,
+    "Writer": 3
+   }
+  },
+  {
+   "date": "2026-08-19",
+   "byBot": {
+    "Coder": 4,
+    "Helper": 3,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-08-20",
+   "byBot": {
+    "Helper": 2,
+    "Planner": 1,
+    "Researcher": 1
+   }
+  },
+  {
+   "date": "2026-08-21",
+   "byBot": {
+    "Coder": 7
+   }
+  },
+  {
+   "date": "2026-08-22",
+   "byBot": {
+    "Helper": 3
+   }
+  },
+  {
+   "date": "2026-08-23",
+   "byBot": {
+    "Planner": 1
+   }
+  },
+  {
+   "date": "2026-08-24",
+   "byBot": {
+    "Coder": 5,
+    "Helper": 1,
+    "Planner": 1,
+    "Writer": 2
+   }
+  },
+  {
+   "date": "2026-08-25",
+   "byBot": {
+    "Coder": 1,
+    "Helper": 3,
+    "Planner": 1,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-08-26",
+   "byBot": {
+    "Coder": 7,
+    "Helper": 3,
+    "Team chat": 1,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-08-27",
+   "byBot": {
+    "Coder": 1,
+    "Helper": 1,
+    "Planner": 1,
+    "Team chat": 1,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-08-28",
+   "byBot": {
+    "Coder": 4,
+    "Planner": 3,
+    "Researcher": 1
+   }
+  },
+  {
+   "date": "2026-08-29",
+   "byBot": {
+    "Team chat": 1
+   }
+  },
+  {
+   "date": "2026-08-30",
+   "byBot": {
+    "Coder": 4,
+    "Researcher": 1
+   }
+  },
+  {
+   "date": "2026-08-31",
+   "byBot": {
+    "Coder": 4,
+    "Helper": 1,
+    "Planner": 1,
+    "Researcher": 1,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-09-01",
+   "byBot": {
+    "Coder": 7,
+    "Planner": 1,
+    "Researcher": 2
+   }
+  },
+  {
+   "date": "2026-09-02",
+   "byBot": {
+    "Coder": 1,
+    "Helper": 4
+   }
+  },
+  {
+   "date": "2026-09-03",
+   "byBot": {
+    "Coder": 5,
+    "Researcher": 1
+   }
+  },
+  {
+   "date": "2026-09-04",
+   "byBot": {
+    "Coder": 2,
+    "Helper": 2,
+    "Planner": 2,
+    "Researcher": 3,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-09-05",
+   "byBot": {}
+  },
+  {
+   "date": "2026-09-06",
+   "byBot": {}
+  },
+  {
+   "date": "2026-09-07",
+   "byBot": {
+    "Coder": 1,
+    "Helper": 3,
+    "Researcher": 1
+   }
+  },
+  {
+   "date": "2026-09-08",
+   "byBot": {
+    "Coder": 4,
+    "Helper": 1,
+    "Planner": 1,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-09-09",
+   "byBot": {
+    "Coder": 1,
+    "Helper": 3
+   }
+  },
+  {
+   "date": "2026-09-10",
+   "byBot": {
+    "Coder": 5,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-09-11",
+   "byBot": {
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-09-12",
+   "byBot": {}
+  },
+  {
+   "date": "2026-09-13",
+   "byBot": {
+    "Coder": 1,
+    "Researcher": 1,
+    "Writer": 2
+   }
+  },
+  {
+   "date": "2026-09-14",
+   "byBot": {
+    "Coder": 8,
+    "Planner": 1,
+    "Team chat": 1
+   }
+  },
+  {
+   "date": "2026-09-15",
+   "byBot": {
+    "Coder": 10,
+    "Planner": 1
+   }
+  },
+  {
+   "date": "2026-09-16",
+   "byBot": {
+    "Coder": 3,
+    "Helper": 2,
+    "Planner": 2,
+    "Writer": 3
+   }
+  },
+  {
+   "date": "2026-09-17",
+   "byBot": {
+    "Coder": 16,
+    "Helper": 1,
+    "Planner": 1
+   }
+  },
+  {
+   "date": "2026-09-18",
+   "byBot": {
+    "Coder": 1,
+    "Researcher": 3,
+    "Writer": 2
+   }
+  },
+  {
+   "date": "2026-09-19",
+   "byBot": {
+    "Coder": 4,
+    "Planner": 1
+   }
+  },
+  {
+   "date": "2026-09-20",
+   "byBot": {
+    "Helper": 1
+   }
+  },
+  {
+   "date": "2026-09-21",
+   "byBot": {
+    "Coder": 1,
+    "Team chat": 1
+   }
+  },
+  {
+   "date": "2026-09-22",
+   "byBot": {
+    "Coder": 7,
+    "Helper": 1,
+    "Planner": 1,
+    "Writer": 2
+   }
+  },
+  {
+   "date": "2026-09-23",
+   "byBot": {
+    "Coder": 4,
+    "Helper": 1,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-09-24",
+   "byBot": {
+    "Coder": 13,
+    "Helper": 2,
+    "Planner": 1
+   }
+  },
+  {
+   "date": "2026-09-25",
+   "byBot": {
+    "Coder": 3,
+    "Helper": 10,
+    "Planner": 1
+   }
+  },
+  {
+   "date": "2026-09-26",
+   "byBot": {}
+  },
+  {
+   "date": "2026-09-27",
+   "byBot": {
+    "Coder": 4
+   }
+  },
+  {
+   "date": "2026-09-28",
+   "byBot": {
+    "Coder": 1,
+    "Planner": 2
+   }
+  },
+  {
+   "date": "2026-09-29",
+   "byBot": {
+    "Coder": 10,
+    "Helper": 1,
+    "Planner": 1,
+    "Researcher": 5,
+    "Writer": 3
+   }
+  },
+  {
+   "date": "2026-09-30",
+   "byBot": {
+    "Helper": 4,
+    "Planner": 1
+   }
+  },
+  {
+   "date": "2026-10-01",
+   "byBot": {
+    "Coder": 1,
+    "Writer": 4
+   }
+  },
+  {
+   "date": "2026-10-02",
+   "byBot": {
+    "Coder": 4,
+    "Helper": 5,
+    "Researcher": 2
+   }
+  },
+  {
+   "date": "2026-10-03",
+   "byBot": {
+    "Helper": 1
+   }
+  },
+  {
+   "date": "2026-10-04",
+   "byBot": {
+    "Helper": 3
+   }
+  },
+  {
+   "date": "2026-10-05",
+   "byBot": {
+    "Helper": 3,
+    "Planner": 2
+   }
+  },
+  {
+   "date": "2026-10-06",
+   "byBot": {
+    "Coder": 5,
+    "Helper": 1
+   }
+  },
+  {
+   "date": "2026-10-07",
+   "byBot": {
+    "Coder": 5,
+    "Planner": 2
+   }
+  },
+  {
+   "date": "2026-10-08",
+   "byBot": {
+    "Coder": 6,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-10-09",
+   "byBot": {
+    "Coder": 2,
+    "Helper": 7,
+    "Researcher": 4,
+    "Writer": 11
+   }
+  },
+  {
+   "date": "2026-10-10",
+   "byBot": {
+    "Helper": 2
+   }
+  },
+  {
+   "date": "2026-10-11",
+   "byBot": {
+    "Coder": 2
+   }
+  },
+  {
+   "date": "2026-10-12",
+   "byBot": {
+    "Coder": 4,
+    "Helper": 5,
+    "Planner": 1,
+    "Writer": 1
+   }
+  },
+  {
+   "date": "2026-10-13",
+   "byBot": {
+    "Coder": 6,
+    "Writer": 1
+   }
+  }
+ ]
+}

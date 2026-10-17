@@ -19,7 +19,7 @@ TZ = os.environ.get("MSG_GRAPH_TZ", "America/Los_Angeles")
 Z = ZoneInfo(TZ)
 RELAY_ID = "imessage-relay"
 RELAY = "iMessage relay"
-CACHE_VERSION = 2
+CACHE_VERSION = 3
 DEDUP_MS = 600_000
 
 RE_LIVE = re.compile(r"You.re live as")
@@ -133,19 +133,18 @@ def counts_fingerprint(bots, day_list):
     return hashlib.blake2b(raw.encode(), digest_size=16).hexdigest()
 
 
-def load_cache(path, account):
+def load_cache(path):
     try:
         c = json.load(open(path))
     except Exception:
         return None
-    if c.get("version") != CACHE_VERSION or c.get("account") != account:
+    if c.get("version") != CACHE_VERSION:
         return None
     return c
 
 
-def build_output(account, generated_at, bots, days):
+def build_output(generated_at, bots, days):
     return {
-        "account": account,
         "generatedAt": generated_at or dt.datetime.now(Z).isoformat(timespec="seconds"),
         "timezone": TZ,
         "bots": dict(sorted(bots.items())),
@@ -154,10 +153,11 @@ def build_output(account, generated_at, bots, days):
 
 
 def main():
-    ap = argparse.ArgumentParser()
+    here = os.path.dirname(os.path.abspath(__file__))
+    ap = argparse.ArgumentParser(description="Export daily per-bot message counts for msg-graph.")
     ap.add_argument("--db", default="/home/box/agent-data/search-index.db")
-    ap.add_argument("--account", required=True)
-    ap.add_argument("--out", required=True)
+    ap.add_argument("--out", default=os.path.join(here, "data", "messages.json"),
+                    help="output JSON (default: data/messages.json next to this script)")
     ap.add_argument("--generated-at", help="override timestamp (for reproducibility checks)")
     ap.add_argument("--full", action="store_true", help="ignore cache and rescan everything")
     a = ap.parse_args()
@@ -171,7 +171,7 @@ def main():
 
     names = load_names(agents_dir)
     cp = cache_path(a.out)
-    cache = None if a.full else load_cache(cp, a.account)
+    cache = None if a.full else load_cache(cp)
     sigs = store_sigs(agents_dir)
     if (
         cache
@@ -248,7 +248,7 @@ def main():
         if bid != RELAY_ID and bid in names:
             bots[bid] = {"name": names[bid]}
 
-    out = build_output(a.account, a.generated_at, bots, days)
+    out = build_output(a.generated_at, bots, days)
     day_list = out["days"]
     fp = counts_fingerprint(out["bots"], day_list)
 
@@ -272,7 +272,6 @@ def main():
     }
     cache_out = {
         "version": CACHE_VERSION,
-        "account": a.account,
         "sealed_through": yesterday.isoformat(),
         "high_water_id": max_id,
         "bots": sealed_bots or dict(out["bots"]),
