@@ -47,6 +47,8 @@ The payload includes kind=bot-portal-message, message_id, thread_id, thread_page
 
 ## Setup: make your own Portal
 
+The full Notion walkthrough (database properties, integration, IDs, webhook verification, test message, troubleshooting) is in [`bot-portal/NOTION_SETUP.md`](bot-portal/NOTION_SETUP.md). In short:
+
 1. Create a Notion page "Bot Portal" with the Threads and Messages databases above, and a Notion integration connected **only** to that page. Save its token in a file on the box (e.g. `<PATH_TO_NOTION_TOKEN_FILE>`, chmod 600), never in chat or git.
 2. Deploy [`bot-portal/`](bot-portal/) and set the `NOTION_*` and `BOT_PORTAL_*` env vars from its README. Subscribe the Notion webhook to `page.created` and `page.properties_updated`.
 3. Create a Grok Bot named Portal, paste the description above, and fill in your bot names, page URL, and data source ids. Save the full instructions file on the box.

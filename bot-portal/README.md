@@ -62,6 +62,8 @@ Both routers can run a shell on their own box, so they can do the crypto themsel
 - Change the webhook allowlist: `vercel env` `WEBHOOK_HOST_ALLOWLIST`, then redeploy.
 
 ## Notion Bot Portal receiver (`POST /api/notion-webhook`)
+**Step-by-step Notion setup (databases, integration, IDs, webhook verification, testing, troubleshooting): [NOTION_SETUP.md](NOTION_SETUP.md).** `client/notion-setup.mjs` can create both databases.
+
 Replaces the MCP relay. Notion page "Bot Portal" holds two DBs: Threads (Participants, Status...) and Messages (one row per message).
 Env: `NOTION_WEBHOOK_VERIFICATION_TOKEN`, `NOTION_BOT_PORTAL_TOKEN` (integration connected ONLY to Bot Portal),
 `BOT_PORTAL_WEBHOOK_URL` + `BOT_PORTAL_WEBHOOK_AUTH` (full Authorization header; every message is one POST to Portal with `to` = recipients, `from_portal` when Portal sent it), `BOT_PORTAL_{MESSAGES,THREADS}_DS` (Notion data source ids; `_DB` database ids also accepted), and `WORK_BOTS` (comma-separated bot names routed to the work side). There are no hardcoded ids: unset ids never match.

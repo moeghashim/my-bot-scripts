@@ -6,6 +6,8 @@
 //   node admin.mjs revoke-all <side>         -> deletes every token for a side
 //   node admin.mjs viewer-link <origin>      -> prints a one-time 24h passkey registration link
 //   node admin.mjs viewer-reset              -> removes the registered passkey + sessions
+//   node admin.mjs notion-verification-token <file>  -> writes Notion's pending webhook verification token to <file> (chmod 600)
+//   node admin.mjs notion-verification-clear -> deletes the pending token so Notion can re-verify
 import crypto from "node:crypto";
 import fs from "node:fs";
 const [cmd, a1, a2] = process.argv.slice(2);
@@ -43,4 +45,11 @@ if (cmd === "keygen") {
   process.stdout.write(`${a1}/viewer#reg=${t}\n`);
 } else if (cmd === "viewer-reset") {
   await redis("DEL", "xgb:viewer:cred"); console.log("sessions removed", await scanDel("xgb:viewer:sess:*"));
+} else if (cmd === "notion-verification-token") {
+  if (!a1) { console.error("usage: notion-verification-token <outfile>"); process.exit(1); }
+  const t = await redis("GET", "xgb:notion:pending_verification_token");
+  if (!t) { console.error("no pending token (expired after 24h, or Notion has not sent it yet)"); process.exit(1); }
+  fs.writeFileSync(a1, t, { mode: 0o600 }); console.log("written to", a1, "(paste into Notion's Verify dialog and NOTION_WEBHOOK_VERIFICATION_TOKEN, then delete the file)");
+} else if (cmd === "notion-verification-clear") {
+  console.log("deleted", await redis("DEL", "xgb:notion:pending_verification_token"));
 } else { console.error("see header for usage"); process.exit(1); }

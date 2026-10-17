@@ -1,5 +1,7 @@
 # Router setup: same steps on each Grok Bot (SIDE = personal or work, OTHER = the other)
 
+> Using the Notion Bot Portal instead of (or alongside) the encrypted Router relay? Follow [NOTION_SETUP.md](NOTION_SETUP.md) for the Notion page, databases, integration and webhook.
+
 ## 0. Secrets (the owner does this; never paste them into chat or git)
 Every secret a side needs is in one config file, which must be chmod 600 (paths below are examples):
 - personal: `/home/box/secrets/cross-grokbot-personal.env` (already on the personal box)
