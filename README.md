@@ -4,6 +4,13 @@ Small, self-contained scripts and services I use alongside my Grok Bot assistant
 
 Most scripts assume they run on a Grok Bot box (a Linux machine with `/workspace` and `/home/box/agent-data`), but every path and id can be overridden with env vars or flags.
 
+
+## My Grok Bot setup
+
+![Personal Grok Bot chart](bot-army-personal.png)
+
+![Work Grok Bot chart](bot-army-work.png)
+
 ## Projects
 
 | Folder | What it does | Runtime |
