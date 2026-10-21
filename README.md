@@ -1,3 +1,5 @@
+> Forked from [wustep/my-bot-scripts](https://github.com/wustep/my-bot-scripts) by Stephen Wu (MIT license). Original work © Stephen Wu.
+
 # my-bot-scripts
 
 Small, self-contained scripts and services I use alongside my Grok Bot assistants: a relay between two bot accounts, an iMessage wake-up relay, Notion helpers, a message-count dashboard, and a few utilities. Each folder stands alone with its own README; nothing here needs the others.
