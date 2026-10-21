@@ -1,4 +1,4 @@
-> Forked from [wustep/my-bot-scripts](https://github.com/wustep/my-bot-scripts) by Stephen Wu (MIT license). Original work © Stephen Wu.
+> Original work © Stephen Wu (MIT license).
 
 # my-bot-scripts
 
